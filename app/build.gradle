@@ -1,0 +1,90 @@
+apply plugin: 'com.android.application'
+apply from: 'doraemonkit.gradle'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    defaultConfig {
+        applicationId rootProject.ext.android["applicationId"]
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+        multiDexEnabled true
+    }
+    signingConfigs {
+        release {
+            storeFile file("keystore/test.keystore")
+            storePassword "test123456"
+            keyAlias "test"
+            keyPassword "test123456"
+        }
+    }
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+//            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    //指定资源和代码目录
+    sourceSets {
+        debug {
+            manifest.srcFile 'src/debug/java/AndroidManifest.xml'
+            jniLibs.srcDir 'libs'
+        }
+
+        release {
+            manifest.srcFile 'src/release/java/AndroidManifest.xml'
+            jniLibs.srcDir 'libs'
+        }
+
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation rootProject.ext.dependencies["junit"]
+    implementation rootProject.ext.dependencies["multidex"]
+    implementation rootProject.ext.dependencies["appcompat-v7"]
+    implementation rootProject.ext.dependencies["design"]
+    implementation rootProject.ext.dependencies["okhttp"]
+    implementation rootProject.ext.dependencies["glide"]
+    implementation rootProject.ext.dependencies["glide_okhttp3"]
+    annotationProcessor rootProject.ext.dependencies["glide_compiler"]
+    implementation rootProject.ext.dependencies["picasso"]
+    implementation rootProject.ext.dependencies["fresco"]
+    implementation rootProject.ext.dependencies["fresco-processors"]
+    //weex相关
+    implementation rootProject.ext.dependencies["weex_inspector"]
+    implementation rootProject.ext.dependencies["weex_sdk"]
+    implementation rootProject.ext.dependencies["utilcode"]
+    implementation rootProject.ext.dependencies["easypermissions"]
+    releaseImplementation rootProject.ext.dependencies["okgo"]
+    //高德地图定位
+    implementation rootProject.ext.dependencies["amap_location"]
+    //腾讯地图定位
+    implementation rootProject.ext.dependencies["tencent_location"]
+    //百度地图定位
+    implementation files('libs/BaiduLBS_Android.jar')
+
+}
