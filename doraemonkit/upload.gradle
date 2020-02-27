@@ -1,9 +1,9 @@
 apply plugin: 'com.novoda.bintray-release'
 // 配置发布
 publish {
-    def groupProjectID = 'com.didichuxing.doraemonkit'
-    def artifactProjectID = 'doraemonkit'
-    def publishVersionID = "${rootProject.ext.android["jcenterArchivesVersionName"]}"
+    def groupProjectID = 'com.houzhenpu.doraemonkit'
+    def artifactProjectID = 'performance'
+    def publishVersionID = "0.2.5"
 
     userOrg = 'doraemonkit'
     repoName = 'DoraemonKit'
