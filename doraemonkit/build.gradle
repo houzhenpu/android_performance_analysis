@@ -52,7 +52,7 @@ dependencies {
     //implementation rootProject.ext.dependencies["free_reflection"]
     //函数耗时
     implementation ('com.google.guava:guava:27.1-android'){
-        exclude group: 'com.google.guava’, module: ‘listenablefuture'
+        exclude group: 'com.google.guava', module: 'listenablefuture'
     }
     implementation rootProject.ext.dependencies["utilcode"]
     //远程调试db
