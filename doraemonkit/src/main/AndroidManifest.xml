@@ -28,21 +28,21 @@
 
     <application>
         <activity
-            android:name=".ui.UniversalActivity"
+            android:name="com.performance.analysis.ui.UniversalActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden|stateUnchanged" />
         <activity
-            android:name=".ui.TranslucentActivity"
+            android:name="com.performance.analysis.ui.TranslucentActivity"
             android:theme="@style/DK.Theme.Translucent"
             android:windowSoftInputMode="stateHidden|stateUnchanged" />
         <activity
-            android:name=".zxing.activity.CaptureActivity"
+            android:name="com.performance.analysis.zxing.activity.CaptureActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|stateUnchanged" />
 
         <provider
-            android:name=".DebugFileProvider"
+            android:name="com.performance.analysis.DebugFileProvider"
             android:authorities="${applicationId}.debugfileprovider"
             android:exported="false"
             android:grantUriPermissions="true">

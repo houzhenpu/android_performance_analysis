@@ -15,7 +15,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center" />
 
-        <com.didichuxing.doraemonkit.zxing.view.ViewfinderView
+        <com.performance.analysis.zxing.view.ViewfinderView
             android:id="@+id/viewfinder_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

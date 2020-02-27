@@ -30,7 +30,7 @@
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 
     <application
-        android:name=".App"
+        android:name="com.performance.doraemondemo.App"
         android:allowBackup="false"
         android:icon="@mipmap/dk_app_icon"
         android:label="@string/app_name"
@@ -38,9 +38,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".WebViewActivity" />
-        <activity android:name=".TestActivity" />
-        <activity android:name=".SecondActivity" />
+        <activity android:name="com.performance.doraemondemo.WebViewActivity" />
+        <activity android:name="com.performance.doraemondemo.TestActivity" />
+        <activity android:name="com.performance.doraemondemo.SecondActivity" />
 
         <!--        高德定位服务-->
         <service android:name="com.amap.api.location.APSService" />

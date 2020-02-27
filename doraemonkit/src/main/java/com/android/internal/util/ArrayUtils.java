@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.ArraySet;
 
-import com.didichuxing.doraemonkit.kit.methodtrace.libcore.util.EmptyArray;
+import com.performance.analysis.kit.methodtrace.libcore.util.EmptyArray;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;

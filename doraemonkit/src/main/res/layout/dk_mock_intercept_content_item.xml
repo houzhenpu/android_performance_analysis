@@ -42,7 +42,7 @@
             android:textColor="@color/dk_color_666666"
             android:textSize="14sp" />
 
-        <com.didichuxing.doraemonkit.view.jsonviewer.JsonRecyclerView
+        <com.performance.analysis.view.jsonviewer.JsonRecyclerView
             android:id="@+id/jsonviewer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
         android:textSize="14sp"
         tools:text="修改人:" />
 
-    <com.didichuxing.doraemonkit.view.MultiLineRadioGroup
+    <com.performance.analysis.view.MultiLineRadioGroup
         android:id="@+id/radio_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -6,7 +6,7 @@
     android:background="@color/dk_color_FFFFFF"
     android:orientation="vertical">
 
-    <com.didichuxing.doraemonkit.ui.widget.titlebar.HomeTitleBar
+    <com.performance.analysis.ui.widget.titlebar.HomeTitleBar
         android:id="@+id/title_bar"
         android:layout_width="match_parent"
         android:layout_height="89dp"
@@ -66,7 +66,7 @@
         android:textColor="@color/dk_color_FFFFFF"
         android:textSize="18sp" />
 
-    <com.didichuxing.doraemonkit.view.jsonviewer.JsonRecyclerView
+    <com.performance.analysis.view.jsonviewer.JsonRecyclerView
         android:id="@+id/jsonviewer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

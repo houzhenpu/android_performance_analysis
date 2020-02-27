@@ -18,7 +18,7 @@
         android:layout_weight="1"
         android:gravity="center" />
 
-    <com.didichuxing.doraemonkit.kit.fileexplorer.SpInputView
+    <com.performance.analysis.kit.fileexplorer.SpInputView
         android:id="@+id/input_sp_value"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
