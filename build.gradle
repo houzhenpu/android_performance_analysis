@@ -32,5 +32,5 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-tasks.getByPath(":doraemonkit:javadocRelease").enabled = false
-tasks.getByPath(":doraemonkit-no-op:javadocRelease").enabled = false
+//tasks.getByPath(":doraemonkit:javadocRelease").enabled = false
+//tasks.getByPath(":doraemonkit-no-op:javadocRelease").enabled = false
