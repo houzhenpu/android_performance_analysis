@@ -1,6 +1,6 @@
 package com.performance.analysis.view.jsonviewer.adapter;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by yuyuhang on 2017/11/30.

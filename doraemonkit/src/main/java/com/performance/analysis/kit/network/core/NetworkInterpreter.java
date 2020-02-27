@@ -1,6 +1,6 @@
 package com.performance.analysis.kit.network.core;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
 
 import com.performance.analysis.kit.network.bean.NetworkRecord;

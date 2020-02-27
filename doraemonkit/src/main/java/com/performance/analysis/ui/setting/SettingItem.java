@@ -1,7 +1,7 @@
 package com.performance.analysis.ui.setting;
 
-import android.support.annotation.DrawableRes;
-import android.support.annotation.StringRes;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.StringRes;
 
 /**
  * Created by wanglikun on 2018/9/14.

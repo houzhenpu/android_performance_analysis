@@ -1,6 +1,6 @@
 package com.performance.analysis.kit.custom;
 
-import android.support.annotation.StringRes;
+import androidx.annotation.StringRes;
 import android.view.View;
 
 public class PageDataItem {

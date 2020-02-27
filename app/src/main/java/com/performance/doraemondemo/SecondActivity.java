@@ -1,8 +1,8 @@
 package com.performance.doraemondemo;
 
 import android.os.Bundle;
-import android.os.Debug;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.didichuxing.doraemondemo.R;
 

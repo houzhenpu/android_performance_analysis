@@ -1,6 +1,6 @@
 package com.performance.analysis.ui.realtime.widget;
 
-import android.support.v4.util.Pools;
+import androidx.core.util.Pools;
 
 /**
  * ================================================

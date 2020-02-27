@@ -1,6 +1,6 @@
 package com.performance.analysis.ui.realtime;
 
-import android.support.annotation.IdRes;
+import androidx.annotation.IdRes;
 
 /**
  * ================================================

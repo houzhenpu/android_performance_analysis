@@ -1,6 +1,6 @@
 package com.performance.analysis.kit.network.httpurlconnection.interceptor;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.TextUtils;
 
 import com.performance.analysis.kit.largepicture.LargePictureManager;

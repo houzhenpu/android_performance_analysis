@@ -13,14 +13,15 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.annotation.IdRes;
-import android.support.annotation.StringRes;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+
+import androidx.annotation.IdRes;
+import androidx.annotation.StringRes;
 
 import com.blankj.utilcode.util.ScreenUtils;
 import com.performance.analysis.config.FloatIconConfig;

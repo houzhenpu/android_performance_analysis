@@ -1,7 +1,7 @@
 package com.performance.doraemondemo.util;
 
 import android.net.Uri;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.performance.analysis.kit.largepicture.fresco.LargeBitmapFrescoProcessor;
 import com.facebook.drawee.backends.pipeline.Fresco;

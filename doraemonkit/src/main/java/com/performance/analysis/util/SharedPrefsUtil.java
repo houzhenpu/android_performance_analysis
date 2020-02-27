@@ -2,7 +2,7 @@ package com.performance.analysis.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 /**
  * Created by wanglikun on 2018/9/14.

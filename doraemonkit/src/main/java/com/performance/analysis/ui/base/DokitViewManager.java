@@ -1,7 +1,7 @@
 package com.performance.analysis.ui.base;
 
 import android.app.Activity;
-import android.arch.persistence.room.Room;
+import androidx.room.Room;
 import android.content.Context;
 import android.graphics.Point;
 import android.view.WindowManager;
