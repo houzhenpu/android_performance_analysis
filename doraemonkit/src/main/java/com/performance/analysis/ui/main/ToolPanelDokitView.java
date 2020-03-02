@@ -1,19 +1,21 @@
 package com.performance.analysis.ui.main;
 
 import android.content.Context;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.didichuxing.doraemonkit.R;
-import com.performance.analysis.kit.Category;
-import com.performance.analysis.ui.widget.titlebar.HomeTitleBar;
 import com.performance.analysis.constant.DokitConstant;
+import com.performance.analysis.kit.Category;
 import com.performance.analysis.ui.base.AbsDokitView;
 import com.performance.analysis.ui.base.DokitViewLayoutParams;
 import com.performance.analysis.ui.kit.GroupKitAdapter;
 import com.performance.analysis.ui.kit.KitItem;
+import com.performance.analysis.ui.widget.titlebar.HomeTitleBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +66,7 @@ public class ToolPanelDokitView extends AbsDokitView {
             kitLists.add(DokitConstant.getKitItems(Category.PLATFORM));
         }
         //常用工具
-        kitLists.add(DokitConstant.getKitItems(Category.TOOLS));
+        //kitLists.add(DokitConstant.getKitItems(Category.TOOLS));
         //weex
         if (DokitConstant.getKitItems(Category.WEEX) != null && !DokitConstant.getKitItems(Category.WEEX).isEmpty()) {
             kitLists.add(DokitConstant.getKitItems(Category.WEEX));
@@ -74,9 +76,9 @@ public class ToolPanelDokitView extends AbsDokitView {
         //视觉工具
         kitLists.add(DokitConstant.getKitItems(Category.UI));
 
-        kitLists.add(DokitConstant.getKitItems(Category.FLOAT_MODE));
-        kitLists.add(DokitConstant.getKitItems(Category.CLOSE));
-        kitLists.add(DokitConstant.getKitItems(Category.VERSION));
+//        kitLists.add(DokitConstant.getKitItems(Category.FLOAT_MODE));
+//        kitLists.add(DokitConstant.getKitItems(Category.CLOSE));
+//        kitLists.add(DokitConstant.getKitItems(Category.VERSION));
         mGroupKitAdapter.setData(kitLists);
         mGroupKitContainer.setAdapter(mGroupKitAdapter);
     }

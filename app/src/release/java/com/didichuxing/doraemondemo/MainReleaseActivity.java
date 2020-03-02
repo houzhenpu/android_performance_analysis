@@ -70,8 +70,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
-import pub.devrel.easypermissions.EasyPermissions;
-import pub.devrel.easypermissions.PermissionRequest;
 
 
 public class MainReleaseActivity extends AppCompatActivity implements View.OnClickListener {
@@ -130,13 +128,6 @@ public class MainReleaseActivity extends AppCompatActivity implements View.OnCli
         mBaiduLocationClient.setLocOption(option);
         //获取获取当前单次定位
         mBaiduLocationClient.registerLocationListener(mbdLocationListener);
-        EasyPermissions.requestPermissions(new PermissionRequest
-                .Builder(this, 200,
-                Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.ACCESS_COARSE_LOCATION,
-                Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE
-        ).build());
     }
 
 

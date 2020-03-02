@@ -38,7 +38,6 @@ import com.performance.analysis.kit.gpsmock.GpsMockManager;
 import com.performance.analysis.kit.gpsmock.ServiceHookManager;
 import com.performance.analysis.kit.layoutborder.LayoutBorderKit;
 import com.performance.analysis.kit.logInfo.LogInfoKit;
-import com.performance.analysis.kit.methodtrace.MethodCostKit;
 import com.performance.analysis.kit.mode.FloatModeKit;
 import com.performance.analysis.kit.network.NetworkKit;
 import com.performance.analysis.kit.parameter.cpu.CpuKit;
@@ -340,20 +339,20 @@ class DoraemonKitReal {
         }
         performance.add(new BlockMonitorKit());
         performance.add(new TimeCounterKit());
-        performance.add(new MethodCostKit());
+        //performance.add(new MethodCostKit());
         performance.add(new UIPerformanceKit());
 
-        try {
-            //动态添加leakcanary
-            IKit leakCanaryKit = (IKit) Class.forName("com.didichuxing.doraemonkit.kit.leakcanary.LeakCanaryKit").newInstance();
-            performance.add(leakCanaryKit);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            //动态添加leakcanary
+//            IKit leakCanaryKit = (IKit) Class.forName("com.didichuxing.doraemonkit.kit.leakcanary.LeakCanaryKit").newInstance();
+//            performance.add(leakCanaryKit);
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IllegalAccessException e) {
+//            e.printStackTrace();
+//        } catch (InstantiationException e) {
+//            e.printStackTrace();
+//        }
 
         performance.add(new CustomKit());
 
