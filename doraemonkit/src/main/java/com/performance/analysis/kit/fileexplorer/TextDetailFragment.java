@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.lang.ref.WeakReference;
 
 /**
- * Created by wanglikun on 2018/10/19.
+ *     on 2018/10/19.
  */
 
 public class TextDetailFragment extends BaseFragment {

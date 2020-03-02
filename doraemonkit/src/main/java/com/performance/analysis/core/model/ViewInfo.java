@@ -6,7 +6,7 @@ import android.view.View;
 import com.performance.analysis.util.UIUtils;
 
 /**
- * Created by wanglikun on 2019-06-27
+ *     on 2019-06-27
  */
 public class ViewInfo {
     private static String TAG = "ViewInfo";

@@ -3,7 +3,7 @@ package com.performance.analysis.util;
 import java.util.Date;
 
 /**
- * Created by wanglikun on 2019-06-12
+ *     on 2019-06-12
  */
 public class FormatUtil {
     private FormatUtil() {

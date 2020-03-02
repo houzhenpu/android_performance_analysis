@@ -15,7 +15,7 @@ import java.io.File;
 import java.util.Date;
 
 /**
- * Created by wanglikun on 2019-06-12
+ *     on 2019-06-12
  */
 public class CrashCaptureManager implements Thread.UncaughtExceptionHandler {
     private static final String TAG = "CrashCaptureManager";

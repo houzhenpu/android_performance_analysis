@@ -12,10 +12,6 @@ import com.performance.analysis.ui.base.DokitViewManager;
 import com.performance.analysis.ui.widget.recyclerview.AbsRecyclerAdapter;
 import com.performance.analysis.ui.widget.recyclerview.AbsViewBinder;
 
-/**
- * Created by wanglikun on 2018/9/14.
- * 每隔分类的adapter
- */
 
 public class KitAdapter extends AbsRecyclerAdapter<AbsViewBinder<KitItem>, KitItem> {
 

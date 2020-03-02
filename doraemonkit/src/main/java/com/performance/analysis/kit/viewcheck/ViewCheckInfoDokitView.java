@@ -29,7 +29,7 @@ import com.performance.analysis.ui.base.AbsDokitView;
 import java.util.List;
 
 /**
- * Created by jintai on 2019/09/26.
+ *     on 2019/09/26.
  */
 public class ViewCheckInfoDokitView extends AbsDokitView implements
         ViewCheckDokitView.OnViewSelectListener, View.OnClickListener {

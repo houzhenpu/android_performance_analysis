@@ -2,20 +2,21 @@ package com.performance.analysis.ui.widget.textview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import androidx.annotation.AttrRes;
-import androidx.annotation.ColorRes;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.AttrRes;
+import androidx.annotation.ColorRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
+
 import com.didichuxing.doraemonkit.R;
 
 /**
- * Created by jinliang on 2017/9/29.
+ *     on 2017/9/29.
  */
 
 public class LabelTextView extends LinearLayout {

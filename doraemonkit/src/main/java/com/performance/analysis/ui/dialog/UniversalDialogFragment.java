@@ -13,9 +13,6 @@ import android.view.WindowManager;
 
 import com.didichuxing.doraemonkit.R;
 
-/**
- * Created by wanglikun on 2019/4/12
- */
 public class UniversalDialogFragment extends DialogFragment {
 
     private DialogProvider mProvider;

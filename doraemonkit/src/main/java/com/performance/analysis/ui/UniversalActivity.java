@@ -33,7 +33,7 @@ import com.performance.analysis.ui.base.BaseActivity;
 import com.performance.analysis.ui.base.BaseFragment;
 
 /**
- * Created by wanglikun on 2018/10/26.
+ *     on 2018/10/26.
  * app基础信息Activity
  */
 

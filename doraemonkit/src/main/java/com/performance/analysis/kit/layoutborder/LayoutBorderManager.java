@@ -12,7 +12,7 @@ import com.performance.analysis.ui.layoutborder.ViewBorderFrameLayout;
 import com.performance.analysis.util.LifecycleListenerUtil;
 
 /**
- * Created by wanglikun on 2019/1/9
+ *     on 2019/1/9
  */
 public class LayoutBorderManager {
     private boolean isRunning;

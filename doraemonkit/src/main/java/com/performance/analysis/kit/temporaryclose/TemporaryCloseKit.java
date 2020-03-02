@@ -9,7 +9,7 @@ import com.performance.analysis.ui.base.DokitViewManager;
 import com.didichuxing.doraemonkit.R;
 
 /**
- * Created by wanglikun on 2018/10/26.
+ *     on 2018/10/26.
  */
 
 public class TemporaryCloseKit extends AbstractKit {

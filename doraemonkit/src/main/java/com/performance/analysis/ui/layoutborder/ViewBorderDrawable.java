@@ -9,14 +9,15 @@ import android.graphics.Paint;
 import android.graphics.PixelFormat;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import android.view.View;
 
 import com.performance.analysis.config.LayoutBorderConfig;
 
 /**
- * Created by wanglikun on 2019/1/11
+ *   on 2019/1/11
  */
 public class ViewBorderDrawable extends Drawable {
     private final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);

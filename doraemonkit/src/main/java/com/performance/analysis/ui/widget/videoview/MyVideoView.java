@@ -25,7 +25,7 @@ import com.didichuxing.doraemonkit.R;
 import com.performance.analysis.util.UIUtils;
 
 /**
- * Created by wanglikun on 2019/4/16
+ *     on 2019/4/16
  */
 public class MyVideoView extends RelativeLayout {
 

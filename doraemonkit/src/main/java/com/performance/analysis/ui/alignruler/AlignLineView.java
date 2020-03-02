@@ -3,15 +3,13 @@ package com.performance.analysis.ui.alignruler;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import androidx.annotation.Nullable;
+
 import com.didichuxing.doraemonkit.R;
 
-/**
- * Created by wanglikun on 2018/12/4.
- */
 
 public class AlignLineView extends View {
     private Paint mTextPaint;

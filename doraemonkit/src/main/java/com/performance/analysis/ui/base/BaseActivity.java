@@ -10,7 +10,7 @@ import com.performance.analysis.util.LogHelper;
 import java.util.ArrayDeque;
 
 /**
- * Created by wanglikun on 2018/10/26.
+ *     on 2018/10/26.
  */
 
 public abstract class BaseActivity extends AppCompatActivity {

@@ -6,7 +6,7 @@ import com.performance.analysis.constant.SharedPrefsKey;
 import com.performance.analysis.util.SharedPrefsUtil;
 
 /**
- * Created by wanglikun on 2018/12/28
+ *     on 2018/12/28
  */
 public class ViewCheckConfig {
     public static boolean isViewCheckOpen(Context context) {

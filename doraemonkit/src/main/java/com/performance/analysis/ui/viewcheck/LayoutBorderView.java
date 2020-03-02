@@ -6,9 +6,10 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
 import android.graphics.Paint;
-import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.annotation.Nullable;
 
 import com.didichuxing.doraemonkit.R;
 import com.performance.analysis.core.model.ViewInfo;
@@ -16,9 +17,6 @@ import com.performance.analysis.core.model.ViewInfo;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by wanglikun on 2018/11/23.
- */
 
 public class LayoutBorderView extends View {
     private static final  String TAG1 = "LayoutBorderView";

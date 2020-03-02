@@ -27,7 +27,7 @@ import java.util.List;
 import static android.content.Context.CLIPBOARD_SERVICE;
 
 /**
- * Created by wanglikun on 2018/10/30.
+ *     on 2018/10/30.
  */
 
 public class LogItemAdapter extends AbsRecyclerAdapter<AbsViewBinder<LogLine>, LogLine> implements Filterable {

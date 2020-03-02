@@ -23,7 +23,7 @@ import com.performance.analysis.kit.colorpick.ColorPickConstants;
 import com.performance.analysis.util.ColorUtil;
 
 /**
- * Created by wanglikun on 2018/12/1.
+ *     on 2018/12/1.
  */
 
 public class ColorPickerView extends View {

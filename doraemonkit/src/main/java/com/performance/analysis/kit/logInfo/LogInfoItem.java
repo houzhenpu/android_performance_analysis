@@ -3,7 +3,7 @@ package com.performance.analysis.kit.logInfo;
 import android.util.Log;
 
 /**
- * Created by wanglikun on 2018/11/13.
+ *     on 2018/11/13.
  */
 
 public class LogInfoItem {

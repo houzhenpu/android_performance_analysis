@@ -1,7 +1,7 @@
 package com.performance.analysis.kit;
 
 /**
- * Created by zhangweida on 2018/6/22.
+ *     on 2018/6/22.
  */
 
 public interface Category {

@@ -15,7 +15,7 @@ import com.performance.analysis.ui.widget.recyclerview.AbsRecyclerAdapter;
 import com.performance.analysis.ui.widget.recyclerview.AbsViewBinder;
 
 /**
- * Created by wanglikun on 2018/9/14.
+ *     on 2018/9/14.
  */
 
 public class SettingItemAdapter extends AbsRecyclerAdapter<AbsViewBinder<SettingItem>, SettingItem> {

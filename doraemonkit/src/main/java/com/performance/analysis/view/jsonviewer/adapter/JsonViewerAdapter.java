@@ -17,7 +17,7 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 
 /**
- * Created by yuyuhang on 2017/11/29.
+ *     on 2017/11/29.
  */
 public class JsonViewerAdapter extends BaseJsonViewerAdapter<JsonViewerAdapter.JsonItemViewHolder> {
 

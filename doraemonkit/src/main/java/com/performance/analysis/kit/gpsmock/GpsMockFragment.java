@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by wanglikun on 2018/9/20.
+ *     on 2018/9/20.
  */
 
 public class GpsMockFragment extends BaseFragment implements SettingItemAdapter.OnSettingItemSwitchListener, MyWebViewClient.InvokeListener {

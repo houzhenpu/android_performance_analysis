@@ -16,7 +16,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by wanglikun on 2018/10/10.
+ *     on 2018/10/10.
  */
 
 public class LogInfoManager {

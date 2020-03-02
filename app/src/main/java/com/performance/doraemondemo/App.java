@@ -15,9 +15,6 @@ import com.performance.doraemondemo.dokit.DemoKit;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by zhangweida on 2018/6/22.
- */
 
 public class App extends Application {
     private static final String TAG = "App";

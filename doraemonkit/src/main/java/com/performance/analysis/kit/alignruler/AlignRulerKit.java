@@ -10,7 +10,7 @@ import com.performance.analysis.ui.base.DokitIntent;
 import com.performance.analysis.ui.base.DokitViewManager;
 
 /**
- * Created by wanglikun on 2018/9/19.
+ *     on 2018/9/19.
  */
 
 public class AlignRulerKit extends AbstractKit {

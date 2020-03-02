@@ -10,7 +10,7 @@ import com.performance.analysis.kit.AbstractKit;
 import com.performance.analysis.kit.Category;
 
 /**
- * Created by wanglikun on 2018/9/20.
+ *     on 2018/9/20.
  */
 
 public class GpsMockKit extends AbstractKit {

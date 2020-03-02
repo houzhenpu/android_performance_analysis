@@ -14,7 +14,7 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 /**
- * Created by xiandanin on 2019-05-09 16:30
+ *     on 2019-05-09 16:30
  */
 public class WeakNetworkManager {
     public static final int TYPE_OFF_NETWORK = 0;

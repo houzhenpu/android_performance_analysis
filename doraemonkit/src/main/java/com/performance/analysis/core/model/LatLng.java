@@ -3,7 +3,7 @@ package com.performance.analysis.core.model;
 import java.io.Serializable;
 
 /**
- * Created by wanglikun on 2019-07-19
+ *     on 2019-07-19
  */
 public class LatLng implements Serializable {
     public double latitude;

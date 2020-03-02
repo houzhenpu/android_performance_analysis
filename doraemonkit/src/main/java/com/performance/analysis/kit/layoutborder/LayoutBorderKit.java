@@ -10,7 +10,7 @@ import com.performance.analysis.ui.base.DokitIntent;
 import com.performance.analysis.ui.base.DokitViewManager;
 
 /**
- * Created by wanglikun on 2019/1/7
+ *     on 2019/1/7
  */
 public class LayoutBorderKit extends AbstractKit {
     @Override

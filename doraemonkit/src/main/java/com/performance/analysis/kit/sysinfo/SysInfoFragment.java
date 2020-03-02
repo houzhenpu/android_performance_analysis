@@ -5,11 +5,12 @@ import android.annotation.TargetApi;
 import android.content.pm.PackageInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.view.View;
 
 import com.didichuxing.doraemonkit.R;
 import com.performance.analysis.ui.base.BaseFragment;
@@ -23,10 +24,6 @@ import com.performance.analysis.util.UIUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 手机app信息
- * Created by zhangweida on 2018/6/25.
- */
 
 public class SysInfoFragment extends BaseFragment {
     private RecyclerView mInfoList;

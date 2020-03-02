@@ -12,7 +12,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /**
- * Created by wanglikun on 2019/4/15
+ *     on 2019/4/15
  */
 public class WebUtil {
     public static void webViewLoadLocalHtml(final WebView view, String jsPath) {

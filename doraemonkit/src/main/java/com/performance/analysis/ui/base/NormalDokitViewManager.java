@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by jintai on 2018/10/23.
+ *     on 2018/10/23.
  * 每个activity悬浮窗管理类
  */
 

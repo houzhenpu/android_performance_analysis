@@ -1,7 +1,6 @@
 package com.performance.analysis.view.jsonviewer.view;
 
 import android.content.Context;
-import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -11,12 +10,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+
 import com.didichuxing.doraemonkit.R;
 import com.performance.analysis.view.jsonviewer.adapter.BaseJsonViewerAdapter;
 
 
 /**
- * Created by yuyuhang on 2017/11/29.
+ *     on 2017/11/29.
  */
 public class JsonItemView extends LinearLayout {
 

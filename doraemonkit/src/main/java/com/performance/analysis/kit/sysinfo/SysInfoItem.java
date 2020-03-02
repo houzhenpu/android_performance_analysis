@@ -1,7 +1,7 @@
 package com.performance.analysis.kit.sysinfo;
 
 /**
- * Created by wanglikun on 2018/9/14.
+ *     on 2018/9/14.
  */
 
 public class SysInfoItem {

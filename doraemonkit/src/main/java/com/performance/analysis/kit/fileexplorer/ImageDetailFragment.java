@@ -17,7 +17,7 @@ import java.io.File;
 import java.lang.ref.WeakReference;
 
 /**
- * Created by wanglikun on 2018/10/30.
+ *     on 2018/10/30.
  */
 
 public class ImageDetailFragment extends BaseFragment {

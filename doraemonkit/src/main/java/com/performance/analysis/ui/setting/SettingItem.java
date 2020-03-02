@@ -4,7 +4,7 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.StringRes;
 
 /**
- * Created by wanglikun on 2018/9/14.
+ *     on 2018/9/14.
  */
 
 public class SettingItem {

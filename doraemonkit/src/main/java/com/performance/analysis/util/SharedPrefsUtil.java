@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import androidx.annotation.Nullable;
 
 /**
- * Created by wanglikun on 2018/9/14.
+ *     on 2018/9/14.
  */
 
 public class SharedPrefsUtil {

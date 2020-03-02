@@ -31,7 +31,7 @@ import java.lang.reflect.Method;
 import java.util.regex.Pattern;
 
 /**
- * Created by zhangweida on 2018/6/26.
+ *     on 2018/6/26.
  */
 
 public class DeviceUtils {

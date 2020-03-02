@@ -14,7 +14,7 @@ import com.performance.analysis.ui.widget.recyclerview.AbsViewBinder;
 import com.performance.analysis.util.FormatUtil;
 
 /**
- * Created by wanglikun on 2019-06-12
+ *     on 2019-06-12
  */
 public class CrashHistoryAdapter extends AbsRecyclerAdapter<AbsViewBinder<CrashInfo>, CrashInfo> {
 

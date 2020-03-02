@@ -6,7 +6,7 @@ import com.performance.analysis.constant.SharedPrefsKey;
 import com.performance.analysis.util.SharedPrefsUtil;
 
 /**
- * Created by wanglikun on 2018/9/14.
+ *     on 2018/9/14.
  * 将配置信息保存在sp中
  */
 

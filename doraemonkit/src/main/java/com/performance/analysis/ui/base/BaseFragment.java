@@ -21,7 +21,7 @@ import com.performance.analysis.ui.dialog.UniversalDialogFragment;
 import com.performance.analysis.ui.main.FloatIconDokitView;
 
 /**
- * Created by wanglikun on 2018/10/26.
+ *     on 2018/10/26.
  */
 
 public class BaseFragment extends Fragment {

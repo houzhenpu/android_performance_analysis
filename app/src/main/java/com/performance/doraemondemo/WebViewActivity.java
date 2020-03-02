@@ -2,17 +2,15 @@ package com.performance.doraemondemo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.didichuxing.doraemondemo.R;
 
-/**
- * Created by wanglikun on 2018/11/13.
- */
 
 public class WebViewActivity extends AppCompatActivity {
     public static final String KEY_URL = "key_url";

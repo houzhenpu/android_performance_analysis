@@ -6,9 +6,6 @@ import android.widget.TextView;
 
 import com.didichuxing.doraemonkit.R;
 
-/**
- * Created by wanglikun on 2019/4/12
- */
 public class CommonDialogProvider extends DialogProvider<DialogInfo> {
     private TextView mPositive;
     private TextView mNegative;

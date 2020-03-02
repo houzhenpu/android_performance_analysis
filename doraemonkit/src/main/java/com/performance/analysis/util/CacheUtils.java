@@ -12,7 +12,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
- * Created by wanglikun on 2018/11/17.
+ *     on 2018/11/17.
  */
 public class CacheUtils {
     private static final String TAG = "CacheUtils";

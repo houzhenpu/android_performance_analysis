@@ -3,7 +3,7 @@ package com.performance.analysis.view.jsonviewer.adapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
- * Created by yuyuhang on 2017/11/30.
+ *     on 2017/11/30.
  */
 public abstract class BaseJsonViewerAdapter<VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> {
 

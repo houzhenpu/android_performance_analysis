@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.didichuxing.doraemonkit.R;
 
 /**
- * Created by wanglikun on 2018/12/4.
+ *     on 2018/12/4.
  */
 
 public class HomeTitleBar extends FrameLayout {

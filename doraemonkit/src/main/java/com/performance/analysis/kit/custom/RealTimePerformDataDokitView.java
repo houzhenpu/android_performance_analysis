@@ -21,7 +21,7 @@ import com.performance.analysis.ui.base.DokitViewManager;
 import com.performance.analysis.util.UIUtils;
 
 /**
- * Created by jintai on 2019/09/26.
+ *     on 2019/09/26.
  */
 public class RealTimePerformDataDokitView extends AbsDokitView {
     public static final int UPDATE_DATA_WHAT = 0x123;

@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by wanglikun on 2018/10/23.
+ *     on 2018/10/23.
  * 系统悬浮窗管理类
  */
 

@@ -10,7 +10,7 @@ import com.performance.analysis.ui.base.DokitIntent;
 import com.performance.analysis.ui.base.DokitViewManager;
 
 /**
- * Created by wanglikun on 2018/11/20.
+ *     on 2018/11/20.
  */
 
 public class ViewCheckerKit extends AbstractKit {

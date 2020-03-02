@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 /**
- * Created by wanglikun on 2018/10/30.
+ *     on 2018/10/30.
  */
 
 public class ImageUtil {

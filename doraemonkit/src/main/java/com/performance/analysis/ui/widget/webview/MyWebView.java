@@ -16,7 +16,7 @@ import android.widget.ProgressBar;
 import com.didichuxing.doraemonkit.R;
 
 /**
- * Created by wanglikun on 2019/4/8
+ *     on 2019/4/8
  */
 public class MyWebView extends WebView {
     private ProgressBar mProgressBar;

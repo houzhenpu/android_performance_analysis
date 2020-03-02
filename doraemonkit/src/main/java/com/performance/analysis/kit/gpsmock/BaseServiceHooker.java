@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 import java.util.Map;
 
 /**
- * Created by wanglikun on 2019/4/2
+ *     on 2019/4/2
  */
 public abstract class BaseServiceHooker implements InvocationHandler {
     protected static final String METHOD_ASINTERFACE = "asInterface";

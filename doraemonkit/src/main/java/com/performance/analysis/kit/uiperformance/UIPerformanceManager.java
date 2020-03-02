@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by wanglikun on 2019-06-27
+ *     on 2019-06-27
  */
 public class UIPerformanceManager implements LifecycleListenerUtil.LifecycleListener {
     private static final String TAG = "UIPerformanceManager";

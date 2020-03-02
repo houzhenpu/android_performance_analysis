@@ -11,7 +11,7 @@ import com.performance.analysis.ui.widget.recyclerview.AbsRecyclerAdapter;
 import com.performance.analysis.ui.widget.recyclerview.AbsViewBinder;
 
 /**
- * Created by wanglikun on 2018/12/14.
+ *     on 2018/12/14.
  */
 
 public class TextContentAdapter extends AbsRecyclerAdapter<AbsViewBinder<String>, String> {

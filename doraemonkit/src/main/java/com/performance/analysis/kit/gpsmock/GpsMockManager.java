@@ -1,7 +1,7 @@
 package com.performance.analysis.kit.gpsmock;
 
 /**
- * Created by wanglikun on 2018/12/18.
+ *     on 2018/12/18.
  */
 
 public class GpsMockManager {

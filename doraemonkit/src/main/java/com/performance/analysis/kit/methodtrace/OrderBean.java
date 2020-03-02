@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by hasee on 2017/4/20.
+ *   on 2017/4/20.
  */
  class OrderBean implements Comparable<OrderBean> {
     private String time;
@@ -118,7 +118,6 @@ import java.util.regex.Pattern;
             this.setXit(true);
         }
         time = getRegex(regex.trim(), GET_NUM_REGEX);
-        //System.out.println(time);
         this.time = time;
         String fuction = "";
         try {
@@ -126,7 +125,6 @@ import java.util.regex.Pattern;
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // System.out.println(fuction);
         this.functionName = fuction;
     }
 

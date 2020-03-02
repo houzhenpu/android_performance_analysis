@@ -1,7 +1,7 @@
 package com.performance.analysis.config;
 
 /**
- * Created by wanglikun on 2019/1/7
+ *     on 2019/1/7
  */
 public class LayoutBorderConfig {
     private static boolean sLayoutBorderOpen;

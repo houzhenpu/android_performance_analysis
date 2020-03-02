@@ -3,7 +3,7 @@ package com.performance.analysis.kit.crash;
 import java.io.Serializable;
 
 /**
- * Created by wanglikun on 2019-06-12
+ *     on 2019-06-12
  */
 public class CrashInfo implements Serializable {
     public final Throwable tr;

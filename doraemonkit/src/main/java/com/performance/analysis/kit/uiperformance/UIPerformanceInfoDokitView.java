@@ -17,7 +17,7 @@ import com.performance.analysis.ui.base.AbsDokitView;
 import java.util.List;
 
 /**
- * Created by jintai on 2019/09/26.
+ *     on 2019/09/26.
  */
 public class UIPerformanceInfoDokitView extends AbsDokitView implements UIPerformanceManager.PerformanceDataListener {
     private ImageView mClose;

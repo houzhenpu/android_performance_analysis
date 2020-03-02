@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by wanglikun on 2018/11/17.
+ *     on 2018/11/17.
  */
 
 public class DataCleanFragment extends BaseFragment {

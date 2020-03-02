@@ -7,9 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by wanglikun on 2019/4/12
- */
 public abstract class DialogProvider<T> {
     private T mData;
     private DialogFragment mHost;

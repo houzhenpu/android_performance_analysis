@@ -13,7 +13,7 @@ import com.performance.analysis.ui.widget.recyclerview.AbsViewBinder;
 import com.performance.analysis.util.FileUtil;
 
 /**
- * Created by wanglikun on 2018/10/16.
+ *     on 2018/10/16.
  */
 
 public class FileInfoAdapter extends AbsRecyclerAdapter<AbsViewBinder<FileInfo>, FileInfo> {

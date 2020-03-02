@@ -3,7 +3,7 @@ package com.performance.analysis.ui.fileexplorer;
 import java.io.File;
 
 /**
- * Created by wanglikun on 2018/10/16.
+ *     on 2018/10/16.
  */
 
 public class FileInfo {

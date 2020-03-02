@@ -12,7 +12,7 @@ import com.performance.analysis.kit.Category;
 import com.performance.analysis.ui.TranslucentActivity;
 
 /**
- * Created by wanglikun on 2018/9/13.
+ *     on 2018/9/13.
  */
 
 public class ColorPickerKit extends AbstractKit {

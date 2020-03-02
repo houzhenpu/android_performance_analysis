@@ -14,7 +14,7 @@ import com.performance.analysis.ui.base.AbsDokitView;
 import java.util.List;
 
 /**
- * Created by jintai on 2019/09/26.
+ *     on 2019/09/26.
  */
 public class UIPerformanceDisplayDokitView extends AbsDokitView implements UIPerformanceManager.PerformanceDataListener {
     private LayoutBorderView mLayoutBorderView;

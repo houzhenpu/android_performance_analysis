@@ -4,7 +4,7 @@ import android.graphics.Color;
 import androidx.annotation.ColorInt;
 
 /**
- * Created by wanglikun on 2018/9/15.
+ *     on 2018/9/15.
  */
 
 public class ColorUtil {

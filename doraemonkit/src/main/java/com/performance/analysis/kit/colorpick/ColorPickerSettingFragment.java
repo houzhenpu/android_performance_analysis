@@ -18,7 +18,7 @@ import com.performance.analysis.ui.base.DokitIntent;
 import com.performance.analysis.ui.base.DokitViewManager;
 
 /**
- * Created by wanglikun on 2018/9/15.
+ *     on 2018/9/15.
  */
 
 public class ColorPickerSettingFragment extends BaseFragment {

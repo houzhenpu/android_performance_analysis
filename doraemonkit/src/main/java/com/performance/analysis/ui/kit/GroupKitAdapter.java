@@ -1,14 +1,15 @@
 package com.performance.analysis.ui.kit;
 
 import android.content.Context;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.BarUtils;
@@ -23,9 +24,6 @@ import com.performance.analysis.util.SharedPrefsUtil;
 
 import java.util.List;
 
-/**
- * Created by wanglikun on 2018/11/28.
- */
 
 public class GroupKitAdapter extends AbsRecyclerAdapter<AbsViewBinder<List<KitItem>>, List<KitItem>> {
 

@@ -18,7 +18,7 @@ import com.performance.analysis.ui.widget.titlebar.HomeTitleBar;
 
 /**
  * @author jintai
- * Created by jintai on 2019/10/17.
+ *     on 2019/10/17.
  * 数据库远程调试介绍页面
  */
 

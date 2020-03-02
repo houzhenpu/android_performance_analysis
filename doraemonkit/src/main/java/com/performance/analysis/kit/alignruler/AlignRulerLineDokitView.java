@@ -16,7 +16,7 @@ import com.performance.analysis.ui.base.DokitViewManager;
 import com.performance.analysis.ui.base.AbsDokitView;
 
 /**
- * Created by jintai on 2019/09/26.
+ *     on 2019/09/26.
  */
 
 public class AlignRulerLineDokitView extends AbsDokitView implements AlignRulerMarkerDokitView.OnAlignRulerMarkerPositionChangeListener {

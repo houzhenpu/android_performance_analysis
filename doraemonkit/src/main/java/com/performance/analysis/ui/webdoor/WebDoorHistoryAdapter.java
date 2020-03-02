@@ -11,7 +11,7 @@ import com.performance.analysis.ui.widget.recyclerview.AbsRecyclerAdapter;
 import com.performance.analysis.ui.widget.recyclerview.AbsViewBinder;
 
 /**
- * Created by wanglikun on 2018/11/17.
+ *     on 2018/11/17.
  */
 
 public class WebDoorHistoryAdapter extends AbsRecyclerAdapter<AbsViewBinder<String>, String> {

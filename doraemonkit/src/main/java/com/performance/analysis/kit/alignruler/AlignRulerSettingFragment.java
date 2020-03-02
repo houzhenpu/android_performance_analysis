@@ -17,7 +17,7 @@ import com.performance.analysis.ui.setting.SettingItemAdapter;
 import com.performance.analysis.ui.widget.titlebar.HomeTitleBar;
 
 /**
- * Created by wanglikun on 2018/9/19.
+ *     on 2018/9/19.
  */
 
 public class AlignRulerSettingFragment extends BaseFragment {

@@ -7,7 +7,7 @@ import android.os.Environment;
 import android.text.format.Formatter;
 
 /**
- * Created by wanglikun on 2018/11/17.
+ *     on 2018/11/17.
  */
 public class DataCleanUtil {
     private DataCleanUtil() {

@@ -10,7 +10,7 @@ import com.performance.analysis.kit.Category;
 /**
  * 模拟弱网
  *
- * Created by xiandanin on 2019/5/7 19:05
+ *     on 2019/5/7 19:05
  */
 public class WeakNetworkKit extends AbstractKit {
     @Override

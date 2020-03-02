@@ -22,7 +22,7 @@ import com.performance.analysis.ui.widget.titlebar.HomeTitleBar;
 /**
  * 模拟弱网
  *
- * Created by xiandanin on 2019/5/7 19:10
+ *     on 2019/5/7 19:10
  */
 public class WeakNetworkFragment extends BaseFragment implements TextWatcher {
     private SettingItemAdapter mSettingItemAdapter;

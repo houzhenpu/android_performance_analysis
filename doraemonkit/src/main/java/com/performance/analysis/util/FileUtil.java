@@ -10,7 +10,7 @@ import java.io.File;
 import java.util.Locale;
 
 /**
- * Created by wanglikun on 2018/10/17.
+ *     on 2018/10/17.
  */
 
 public class FileUtil {

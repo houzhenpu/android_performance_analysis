@@ -13,7 +13,7 @@ import com.performance.analysis.ui.widget.textview.LabelTextView;
 
 
 /**
- * Created by wanglikun on 2018/9/14.
+ *     on 2018/9/14.
  */
 
 public class SysInfoItemAdapter extends AbsRecyclerAdapter<AbsViewBinder<SysInfoItem>, SysInfoItem> {

@@ -28,7 +28,7 @@ import com.performance.analysis.util.LogHelper;
 import java.util.List;
 
 /**
- * Created by jintai on 2019/09/26.
+ *     on 2019/09/26.
  */
 public class LogInfoDokitView extends AbsDokitView implements LogInfoManager.OnLogCatchListener {
     private static final String TAG = "LogInfoFloatPage";

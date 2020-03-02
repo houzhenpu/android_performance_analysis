@@ -21,7 +21,7 @@ import com.performance.analysis.util.UIUtils;
 import com.performance.analysis.ui.base.AbsDokitView;
 
 /**
- * Created by jintai on 2019/09/26.
+ *     on 2019/09/26.
  */
 public class ColorPickerInfoDokitView extends AbsDokitView {
     private ImageView mColor;

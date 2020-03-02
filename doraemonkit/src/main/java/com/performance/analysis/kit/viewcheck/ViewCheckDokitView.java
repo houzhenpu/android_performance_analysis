@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by jintai on 2019/09/26.
+ *     on 2019/09/26.
  */
 public class ViewCheckDokitView extends AbsDokitView implements LifecycleListenerUtil.LifecycleListener {
     private static final String TAG = "ViewCheckFloatPage";

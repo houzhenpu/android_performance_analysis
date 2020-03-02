@@ -1,6 +1,5 @@
 package com.didichuxing.doraemondemo;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -11,13 +10,14 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Looper;
 import android.os.SystemClock;
-import androidx.appcompat.app.AppCompatActivity;
 import android.text.format.Formatter;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
@@ -40,7 +40,6 @@ import com.didichuxing.doraemonkit.kit.network.common.CommonHeaders;
 import com.didichuxing.doraemonkit.kit.network.common.CommonInspectorRequest;
 import com.didichuxing.doraemonkit.kit.network.common.CommonInspectorResponse;
 import com.didichuxing.doraemonkit.kit.network.common.NetworkPrinterHelper;
-
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;

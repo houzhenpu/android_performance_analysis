@@ -20,7 +20,7 @@ import com.performance.analysis.util.UIUtils;
 import com.performance.analysis.ui.base.AbsDokitView;
 
 /**
- * Created by jintai on 2019/09/26.
+ *     on 2019/09/26.
  */
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class ColorPickerDokitView extends AbsDokitView {

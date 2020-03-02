@@ -14,7 +14,7 @@ import com.performance.analysis.util.UIUtils;
 import com.performance.analysis.ui.base.AbsDokitView;
 
 /**
- * Created by jintai on 2019/09/26.
+ *     on 2019/09/26.
  */
 public class TimeCounterDokitView extends AbsDokitView {
     private TextView tvTitle;
@@ -99,6 +99,7 @@ public class TimeCounterDokitView extends AbsDokitView {
             tvLaunch.setText("Launch Cost: " + info.launchCost + "ms");
             tvRender.setText("Render Cost: " + info.renderCost + "ms");
             tvOther.setText("Other Cost: " + info.otherCost + "ms");
+            System.out.println("Pause Cost:   "+ info.pauseCost);
         } else {
             tvPause.setVisibility(View.GONE);
             tvLaunch.setVisibility(View.GONE);

@@ -19,7 +19,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * Created by wanglikun on 2018/9/13.
+ *     on 2018/9/13.
  */
 
 public class FrameInfoFragment extends AbsParameterFragment {

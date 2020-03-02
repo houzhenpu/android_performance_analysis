@@ -6,7 +6,7 @@ import android.os.Bundle;
 import com.blankj.utilcode.util.ActivityUtils;
 
 /**
- * Created by jintai on 2019/9/16.
+ *     on 2019/9/16.
  * dokitView intent
  */
 

@@ -9,7 +9,7 @@ import android.widget.VideoView;
 import com.performance.analysis.util.UIUtils;
 
 /**
- * Created by wanglikun on 2019/4/16
+ *     on 2019/4/16
  */
 public class CustomVideoView extends VideoView implements View.OnTouchListener{
 

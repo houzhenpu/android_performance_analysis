@@ -9,7 +9,7 @@ import com.performance.analysis.kit.Category;
 
 /**
  * 设备、app信息
- * Created by zhangweida on 2018/6/22.
+ *     on 2018/6/22.
  */
 
 public class SysInfoKit extends AbstractKit {

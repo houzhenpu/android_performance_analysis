@@ -9,7 +9,7 @@ import com.performance.analysis.kit.AbstractKit;
 import com.performance.analysis.kit.Category;
 
 /**
- * Created by wanglikun on 2018/10/9.
+ *     on 2018/10/9.
  */
 
 public class LogInfoKit extends AbstractKit {

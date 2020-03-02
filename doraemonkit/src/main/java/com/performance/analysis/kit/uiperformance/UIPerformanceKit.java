@@ -9,7 +9,7 @@ import com.performance.analysis.ui.base.DokitIntent;
 import com.performance.analysis.ui.base.DokitViewManager;
 
 /**
- * Created by wanglikun on 2019-06-27
+ *     on 2019-06-27
  * UI渲染性能kit
  */
 public class UIPerformanceKit extends AbstractKit {

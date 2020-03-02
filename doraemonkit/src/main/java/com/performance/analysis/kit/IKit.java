@@ -5,7 +5,7 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.StringRes;
 
 /**
- * Created by zhangweida on 2018/6/22.
+ *     on 2018/6/22.
  * 工具入口
  */
 public interface IKit {
