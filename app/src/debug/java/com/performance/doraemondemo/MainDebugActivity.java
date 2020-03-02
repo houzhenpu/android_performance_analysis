@@ -1,17 +1,12 @@
 package com.performance.doraemondemo;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.Bundle;
-import android.os.Looper;
 import android.os.SystemClock;
-import androidx.appcompat.app.AppCompatActivity;
 import android.text.format.Formatter;
 import android.util.Log;
 import android.view.View;
@@ -19,20 +14,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.amap.api.location.AMapLocation;
-import com.amap.api.location.AMapLocationClient;
-import com.amap.api.location.AMapLocationClientOption;
-import com.amap.api.location.AMapLocationListener;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.baidu.location.BDAbstractLocationListener;
 import com.baidu.location.BDLocation;
-import com.baidu.location.LocationClient;
-import com.baidu.location.LocationClientOption;
 import com.blankj.utilcode.util.ConvertUtils;
 import com.blankj.utilcode.util.ThreadUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.didichuxing.doraemondemo.R;
-import com.performance.doraemondemo.util.FrescoUtil;
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.performance.analysis.DoraemonKit;
 import com.performance.analysis.kit.largepicture.glide.LargeBitmapGlideTransformation;
 import com.performance.analysis.kit.largepicture.picasso.LargeBitmapPicassoTransformation;
@@ -44,12 +35,8 @@ import com.performance.analysis.kit.network.common.NetworkPrinterHelper;
 import com.performance.analysis.okgo.OkGo;
 import com.performance.analysis.okgo.callback.StringCallback;
 import com.performance.analysis.okgo.model.Response;
-import com.facebook.drawee.view.SimpleDraweeView;
+import com.performance.doraemondemo.util.FrescoUtil;
 import com.squareup.picasso.Picasso;
-import com.tencent.map.geolocation.TencentLocation;
-import com.tencent.map.geolocation.TencentLocationListener;
-import com.tencent.map.geolocation.TencentLocationManager;
-import com.tencent.map.geolocation.TencentLocationRequest;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -79,12 +66,6 @@ public class MainDebugActivity extends AppCompatActivity implements View.OnClick
 
 
     private OkHttpClient okHttpClient;
-    private LocationManager mLocationManager;
-    AMapLocationClient mLocationClient;
-    LocationClient mBaiduLocationClient;
-    AMapLocationClientOption mMapOption;
-    TencentLocationRequest mTencentLocationRequest;
-    TencentLocationManager mTencentLocationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,26 +91,6 @@ public class MainDebugActivity extends AppCompatActivity implements View.OnClick
         findViewById(R.id.btn_upload_test).setOnClickListener(this);
         findViewById(R.id.btn_download_test).setOnClickListener(this);
         okHttpClient = new OkHttpClient().newBuilder().build();
-        //获取定位服务
-        mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        //高德定位服务
-        mLocationClient = new AMapLocationClient(getApplicationContext());
-        mMapOption = new AMapLocationClientOption();
-        //腾讯地图
-        mTencentLocationRequest = TencentLocationRequest.create();
-        mTencentLocationManager = TencentLocationManager.getInstance(getApplicationContext());
-        //百度地图
-        mBaiduLocationClient = new LocationClient(this);
-        //通过LocationClientOption设置LocationClient相关参数
-        LocationClientOption option = new LocationClientOption();
-        // 打开gps
-        option.setOpenGps(true);
-        // 设置坐标类型
-        option.setCoorType("bd09ll");
-        option.setScanSpan(5000);
-        mBaiduLocationClient.setLocOption(option);
-        //获取获取当前单次定位
-        mBaiduLocationClient.registerLocationListener(mbdLocationListener);
         EasyPermissions.requestPermissions(new PermissionRequest
                 .Builder(this, 200,
                 Manifest.permission.ACCESS_FINE_LOCATION,
@@ -199,62 +160,6 @@ public class MainDebugActivity extends AppCompatActivity implements View.OnClick
         }
     };
 
-    /**
-     * 启动普通定位
-     */
-    @SuppressLint("MissingPermission")
-    public void startNormaLocation() {
-
-        mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, mLocationListener);
-
-    }
-
-    /**
-     * 启动高德定位服务
-     */
-    AMapLocationListener mapLocationListener = new AMapLocationListener() {
-        @Override
-        public void onLocationChanged(AMapLocation aMapLocation) {
-            int errorCode = aMapLocation.getErrorCode();
-            String errorInfo = aMapLocation.getErrorInfo();
-            Log.i(TAG, "高德定位===lat==>" + aMapLocation.getLatitude() + "   lng==>" + aMapLocation.getLongitude() + "  errorCode===>" + errorCode + "   errorInfo===>" + errorInfo);
-        }
-    };
-
-    /**
-     * 启动高德地图定位
-     */
-    public void startAmapLocation() {
-        mLocationClient.setLocationListener(mapLocationListener);
-        mMapOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
-        mMapOption.setOnceLocation(true);
-        mLocationClient.setLocationOption(mMapOption);
-        mLocationClient.stopLocation();
-        mLocationClient.startLocation();
-    }
-
-
-    TencentLocationListener mTencentLocationListener = new TencentLocationListener() {
-        @Override
-        public void onLocationChanged(TencentLocation tencentLocation, int error, String errorInfo) {
-            Log.i(TAG, "腾讯定位===onLocationChanged===lat==>" + tencentLocation.getLatitude() + "   lng==>" + tencentLocation.getLongitude() + "  error===>" + error + "  errorInfo===>" + errorInfo);
-        }
-
-        @Override
-        public void onStatusUpdate(String name, int status, String desc) {
-            Log.i(TAG, "腾讯定位===onStatusUpdate==>" + "  name===>" + name + " status===" + status + "  desc===" + desc);
-        }
-    };
-
-    /**
-     * 启动腾讯地图定位
-     */
-    public void startTencentLocation() {
-        //mTencentLocationManager.requestLocationUpdates(mTencentLocationRequest, mTencentLocationListener);
-        //获取获取当前单次定位
-        mTencentLocationManager.requestSingleFreshLocation(mTencentLocationRequest, mTencentLocationListener, Looper.myLooper());
-    }
-
 
     BDAbstractLocationListener mbdLocationListener = new BDAbstractLocationListener() {
         @Override
@@ -262,15 +167,6 @@ public class MainDebugActivity extends AppCompatActivity implements View.OnClick
             Log.i(TAG, "百度定位===onReceiveLocation===lat==>" + bdLocation.getLatitude() + "   lng==>" + bdLocation.getLongitude());
         }
     };
-
-
-    /**
-     * 启动百度地图定位
-     */
-    public void startBaiDuLocation() {
-        mBaiduLocationClient.stop();
-        mBaiduLocationClient.start();
-    }
 
 
     @Override
@@ -291,23 +187,6 @@ public class MainDebugActivity extends AppCompatActivity implements View.OnClick
 
                 startActivity(new Intent(this, SecondActivity.class));
 
-                break;
-            case R.id.btn_location:
-
-                startNormaLocation();
-
-                break;
-
-            case R.id.btn_location_amap:
-                startAmapLocation();
-                break;
-
-            case R.id.btn_location_tencent:
-                startTencentLocation();
-                break;
-
-            case R.id.btn_location_baidu:
-                startBaiDuLocation();
                 break;
 
             case R.id.btn_load_img:
@@ -582,9 +461,6 @@ public class MainDebugActivity extends AppCompatActivity implements View.OnClick
         super.onDestroy();
         okHttpClient.dispatcher().cancelAll();
 
-        mLocationManager.removeUpdates(mLocationListener);
-        mTencentLocationManager.removeUpdates(mTencentLocationListener);
-        mBaiduLocationClient.stop();
     }
 
     @Override

@@ -80,11 +80,5 @@ dependencies {
     implementation rootProject.ext.dependencies["utilcode"]
     implementation rootProject.ext.dependencies["easypermissions"]
     releaseImplementation rootProject.ext.dependencies["okgo"]
-    //高德地图定位
-    implementation rootProject.ext.dependencies["amap_location"]
-    //腾讯地图定位
-    implementation rootProject.ext.dependencies["tencent_location"]
-    //百度地图定位
-    implementation files('libs/BaiduLBS_Android.jar')
 
 }
