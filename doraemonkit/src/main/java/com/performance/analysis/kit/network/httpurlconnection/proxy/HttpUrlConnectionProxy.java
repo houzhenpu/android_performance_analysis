@@ -5,7 +5,6 @@ import android.util.Log;
 import com.performance.analysis.kit.network.NetworkManager;
 import com.performance.analysis.kit.network.httpurlconnection.interceptor.DKInterceptor;
 import com.performance.analysis.kit.network.httpurlconnection.interceptor.HttpMonitorInterceptor;
-import com.performance.analysis.kit.network.httpurlconnection.interceptor.LargePictureInterceptor;
 import com.performance.analysis.kit.network.httpurlconnection.interceptor.MockInterceptor;
 import com.performance.analysis.kit.network.httpurlconnection.HttpChainFacade;
 import com.performance.analysis.kit.network.httpurlconnection.HttpRequest;
@@ -44,8 +43,6 @@ public class HttpUrlConnectionProxy extends HttpURLConnection {
         }
         if (NetworkManager.isActive()) {
             mInterceptors.add(new HttpMonitorInterceptor());
-            //https的大图检测拦截器
-            mInterceptors.add(new LargePictureInterceptor());
         }
 
 

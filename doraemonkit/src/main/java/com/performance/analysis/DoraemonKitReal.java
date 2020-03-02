@@ -20,7 +20,6 @@ import com.blankj.utilcode.util.NetworkUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
 import com.didichuxing.doraemonkit.R;
-import com.performance.analysis.config.PerformanceSpInfoConfig;
 import com.performance.analysis.constant.DokitConstant;
 import com.performance.analysis.constant.SharedPrefsKey;
 import com.performance.analysis.kit.Category;
@@ -37,13 +36,11 @@ import com.performance.analysis.kit.fileexplorer.FileExplorerKit;
 import com.performance.analysis.kit.gpsmock.GpsMockKit;
 import com.performance.analysis.kit.gpsmock.GpsMockManager;
 import com.performance.analysis.kit.gpsmock.ServiceHookManager;
-import com.performance.analysis.kit.largepicture.LargePictureKit;
 import com.performance.analysis.kit.layoutborder.LayoutBorderKit;
 import com.performance.analysis.kit.logInfo.LogInfoKit;
 import com.performance.analysis.kit.methodtrace.MethodCostKit;
 import com.performance.analysis.kit.mode.FloatModeKit;
 import com.performance.analysis.kit.network.NetworkKit;
-import com.performance.analysis.kit.network.NetworkManager;
 import com.performance.analysis.kit.parameter.cpu.CpuKit;
 import com.performance.analysis.kit.parameter.frameInfo.FrameInfoKit;
 import com.performance.analysis.kit.parameter.ram.RamKit;
@@ -345,9 +342,6 @@ class DoraemonKitReal {
         performance.add(new TimeCounterKit());
         performance.add(new MethodCostKit());
         performance.add(new UIPerformanceKit());
-        if (IS_HOOK) {
-            performance.add(new LargePictureKit());
-        }
 
         try {
             //动态添加leakcanary
@@ -435,7 +429,6 @@ class DoraemonKitReal {
         }
         installLeakCanary(app);
         initAndroidUtil(app);
-        checkLargeImgIsOpen();
         registerNetworkStatusChangedListener();
     }
 
@@ -479,15 +472,6 @@ class DoraemonKitReal {
 
             }
         });
-    }
-
-    /**
-     * 确认大图检测功能时候被打开
-     */
-    private static void checkLargeImgIsOpen() {
-        if (PerformanceSpInfoConfig.isLargeImgOpen()) {
-            NetworkManager.get().startMonitor();
-        }
     }
 
     /**

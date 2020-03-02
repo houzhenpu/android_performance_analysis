@@ -10,7 +10,6 @@ import android.os.SystemClock;
 import android.text.format.Formatter;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,13 +19,8 @@ import com.baidu.location.BDAbstractLocationListener;
 import com.baidu.location.BDLocation;
 import com.blankj.utilcode.util.ConvertUtils;
 import com.blankj.utilcode.util.ThreadUtils;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.didichuxing.doraemondemo.R;
-import com.facebook.drawee.view.SimpleDraweeView;
 import com.performance.analysis.DoraemonKit;
-import com.performance.analysis.kit.largepicture.glide.LargeBitmapGlideTransformation;
-import com.performance.analysis.kit.largepicture.picasso.LargeBitmapPicassoTransformation;
 import com.performance.analysis.kit.methodtrace.MethodCost;
 import com.performance.analysis.kit.network.common.CommonHeaders;
 import com.performance.analysis.kit.network.common.CommonInspectorRequest;
@@ -35,8 +29,6 @@ import com.performance.analysis.kit.network.common.NetworkPrinterHelper;
 import com.performance.analysis.okgo.OkGo;
 import com.performance.analysis.okgo.callback.StringCallback;
 import com.performance.analysis.okgo.model.Response;
-import com.performance.doraemondemo.util.FrescoUtil;
-import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -190,21 +182,6 @@ public class MainDebugActivity extends AppCompatActivity implements View.OnClick
                 break;
 
             case R.id.btn_load_img:
-                //Glide 加载
-                String imgUrl = "http://b-ssl.duitang.com/uploads/item/201808/27/20180827043223_twunu.jpg";
-                Glide.with(MainDebugActivity.this)
-                        .asBitmap()
-                        .load(imgUrl)
-                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-                        .skipMemoryCache(true)
-                        .transform(new LargeBitmapGlideTransformation(imgUrl))
-                        .into((ImageView) findViewById(R.id.iv_glide));
-
-                Picasso.get().load(imgUrl)
-                        .transform(new LargeBitmapPicassoTransformation(imgUrl))
-                        .into((ImageView) findViewById(R.id.iv_picasso));
-
-                FrescoUtil.loadImage((SimpleDraweeView) findViewById(R.id.iv_fresco), imgUrl);
 
                 break;
 

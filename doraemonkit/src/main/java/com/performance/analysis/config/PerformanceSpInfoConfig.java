@@ -2,9 +2,7 @@ package com.performance.analysis.config;
 
 import android.content.Context;
 
-import com.performance.analysis.DoraemonKit;
 import com.performance.analysis.constant.SharedPrefsKey;
-import com.performance.analysis.kit.largepicture.LargePictureManager;
 import com.performance.analysis.util.SharedPrefsUtil;
 
 /**
@@ -66,68 +64,6 @@ public class PerformanceSpInfoConfig {
      */
     public static void setFrameUiOpen(Context context, boolean open) {
         SharedPrefsUtil.putBoolean(context, SharedPrefsKey.FRAME_INFO_UI_OPEN, open);
-    }
-
-    /**
-     * 判断是否开启大图检测
-     *
-     * @return
-     */
-    public static boolean isLargeImgOpen() {
-        return SharedPrefsUtil.getBoolean(DoraemonKit.APPLICATION, SharedPrefsKey.LARGE_IMG_OPEN, false);
-    }
-
-    /**
-     * 设置打开或者关闭大图检测
-     *
-     * @param open
-     */
-    public static void setLargeImgOpen(boolean open) {
-        SharedPrefsUtil.putBoolean(DoraemonKit.APPLICATION, SharedPrefsKey.LARGE_IMG_OPEN, open);
-    }
-
-
-    /**
-     * 设置大图内存阈值
-     *
-     * @param context
-     * @param threshold
-     */
-    public static void setLargeImgMemoryThreshold(Context context, float threshold) {
-        SharedPrefsUtil.putFloat(context, SharedPrefsKey.LARGE_IMG_MEMORY_THRESHOLD, threshold);
-        LargePictureManager.getInstance().setMemoryThreshold(threshold);
-    }
-
-
-    /**
-     * 获得大图内存阈值
-     *
-     * @param context
-     * @param threshold
-     */
-    public static float getLargeImgMemoryThreshold(Context context, float threshold) {
-        return SharedPrefsUtil.getFloat(context, SharedPrefsKey.LARGE_IMG_MEMORY_THRESHOLD, threshold);
-    }
-
-    /**
-     * 设置大图文件阈值
-     *
-     * @param context
-     * @param threshold
-     */
-    public static void setLargeImgFileThreshold(Context context, float threshold) {
-        SharedPrefsUtil.putFloat(context, SharedPrefsKey.LARGE_IMG_FILE_THRESHOLD, threshold);
-        LargePictureManager.getInstance().setFileThreshold(threshold);
-    }
-
-    /**
-     * 获得大图文件阈值
-     *
-     * @param context
-     * @param threshold
-     */
-    public static float getLargeImgFileThreshold(Context context, float threshold) {
-        return SharedPrefsUtil.getFloat(context, SharedPrefsKey.LARGE_IMG_FILE_THRESHOLD, threshold);
     }
 
 }

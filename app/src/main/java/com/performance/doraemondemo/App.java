@@ -4,13 +4,13 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.os.StrictMode;
+
 import androidx.multidex.MultiDex;
 
-import com.performance.doraemondemo.dokit.DemoKit;
 import com.performance.analysis.DoraemonKit;
 import com.performance.analysis.kit.IKit;
 import com.performance.analysis.kit.webdoor.WebDoorManager;
-import com.facebook.drawee.backends.pipeline.Fresco;
+import com.performance.doraemondemo.dokit.DemoKit;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,6 @@ public class App extends Application {
         DoraemonKit.install(this, kits);
         //是否显示入口icon
 //        DoraemonKit.setAwaysShowMainIcon(false);
-        Fresco.initialize(this);
         DoraemonKit.setWebDoorCallback(new WebDoorManager.WebDoorCallback() {
             @Override
             public void overrideUrlLoading(Context context, String url) {

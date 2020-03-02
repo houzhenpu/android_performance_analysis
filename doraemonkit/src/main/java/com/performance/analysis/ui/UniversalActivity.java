@@ -1,28 +1,26 @@
 package com.performance.analysis.ui;
 
 import android.os.Bundle;
-import androidx.annotation.Nullable;
 import android.widget.Toast;
 
-import com.performance.analysis.kit.crash.CrashCaptureMainFragment;
-import com.performance.analysis.kit.custom.MonitorDataUploadFragment;
-import com.performance.analysis.kit.dbdebug.DbDebugFragment;
-import com.performance.analysis.kit.gpsmock.GpsMockFragment;
-import com.performance.analysis.kit.logInfo.LogInfoSettingFragment;
-import com.performance.analysis.kit.network.ui.MockTemplatePreviewFragment;
-import com.performance.analysis.kit.network.ui.NetWorkMockFragment;
-import com.performance.analysis.kit.network.ui.NetWorkMonitorFragment;
-import com.performance.analysis.ui.base.BaseActivity;
-import com.performance.analysis.ui.base.BaseFragment;
+import androidx.annotation.Nullable;
+
 import com.performance.analysis.constant.BundleKey;
 import com.performance.analysis.constant.FragmentIndex;
 import com.performance.analysis.kit.alignruler.AlignRulerSettingFragment;
 import com.performance.analysis.kit.blockmonitor.BlockMonitorFragment;
 import com.performance.analysis.kit.colorpick.ColorPickerSettingFragment;
+import com.performance.analysis.kit.crash.CrashCaptureMainFragment;
+import com.performance.analysis.kit.custom.MonitorDataUploadFragment;
 import com.performance.analysis.kit.dataclean.DataCleanFragment;
+import com.performance.analysis.kit.dbdebug.DbDebugFragment;
 import com.performance.analysis.kit.fileexplorer.FileExplorerFragment;
-import com.performance.analysis.kit.largepicture.LargePictureFragment;
+import com.performance.analysis.kit.gpsmock.GpsMockFragment;
+import com.performance.analysis.kit.logInfo.LogInfoSettingFragment;
 import com.performance.analysis.kit.methodtrace.MethodCostFragment;
+import com.performance.analysis.kit.network.ui.MockTemplatePreviewFragment;
+import com.performance.analysis.kit.network.ui.NetWorkMockFragment;
+import com.performance.analysis.kit.network.ui.NetWorkMonitorFragment;
 import com.performance.analysis.kit.parameter.cpu.CpuMainPageFragment;
 import com.performance.analysis.kit.parameter.frameInfo.FrameInfoFragment;
 import com.performance.analysis.kit.parameter.ram.RamMainPageFragment;
@@ -31,6 +29,8 @@ import com.performance.analysis.kit.timecounter.TimeCounterFragment;
 import com.performance.analysis.kit.weaknetwork.WeakNetworkFragment;
 import com.performance.analysis.kit.webdoor.WebDoorDefaultFragment;
 import com.performance.analysis.kit.webdoor.WebDoorFragment;
+import com.performance.analysis.ui.base.BaseActivity;
+import com.performance.analysis.ui.base.BaseFragment;
 
 /**
  * Created by wanglikun on 2018/10/26.
@@ -121,7 +121,6 @@ public class UniversalActivity extends BaseActivity {
                 break;
             //性能监控===大图检测
             case FragmentIndex.FRAGMENT_LARGE_PICTURE:
-                fragmentClass = LargePictureFragment.class;
                 break;
             //性能监控===函数耗时
             case FragmentIndex.FRAGMENT_METHOD_COST:

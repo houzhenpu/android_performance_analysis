@@ -113,23 +113,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/iv_picasso"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_weight="1" />
-
-                <ImageView
-                    android:id="@+id/iv_glide"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_weight="1" />
-
-                <com.facebook.drawee.view.SimpleDraweeView
-                    android:id="@+id/iv_fresco"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_weight="1" />
             </LinearLayout>
 
         </LinearLayout>
