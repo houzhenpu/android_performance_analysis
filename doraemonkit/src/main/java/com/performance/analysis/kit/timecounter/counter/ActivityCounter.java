@@ -129,8 +129,6 @@ public class ActivityCounter {
         if (dokitView != null) {
             dokitView.showInfo(counterInfo);
         }
-        // TODO: 2020-03-03 检测结束 自定义事件
-        System.out.println("  CounterInfo  "+ counterInfo.toString());
         if(onTimeCounterListener != null){
             onTimeCounterListener.onTimeCounter(counterInfo.toString());
         }

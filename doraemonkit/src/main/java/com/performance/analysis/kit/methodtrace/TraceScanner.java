@@ -28,7 +28,6 @@ class TraceScanner {
     public TraceScanner(File file) {
         super();
         this.file = file;
-        System.out.println("file：" + file);
     }
 
     public void setFile(File file) {

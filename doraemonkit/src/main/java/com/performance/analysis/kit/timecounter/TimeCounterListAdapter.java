@@ -90,7 +90,6 @@ public class TimeCounterListAdapter extends AbsRecyclerAdapter<AbsViewBinder<Cou
         }
 
         private void showDetail(CounterInfo info) {
-            System.out.println("TimeCounterListAdapter Pause Cost   " + info.pauseCost);
             if (info.type == CounterInfo.TYPE_APP) {
                 info.show = false;
             }

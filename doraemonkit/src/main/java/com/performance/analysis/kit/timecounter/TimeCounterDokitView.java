@@ -88,7 +88,6 @@ public class TimeCounterDokitView extends AbsDokitView {
     public void showInfo(CounterInfo info) {
         tvTitle.setText(info.title);
         setTotalCost(info.totalCost);
-        System.out.println("TimeCounterDokitView Pause Cost   " + info.pauseCost);
 
         if (info.type == CounterInfo.TYPE_ACTIVITY) {
             tvPause.setVisibility(View.VISIBLE);
