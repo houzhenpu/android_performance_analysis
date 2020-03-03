@@ -66,7 +66,7 @@ public class ToolPanelDokitView extends AbsDokitView {
             kitLists.add(DokitConstant.getKitItems(Category.PLATFORM));
         }
         //常用工具
-        //kitLists.add(DokitConstant.getKitItems(Category.TOOLS));
+        kitLists.add(DokitConstant.getKitItems(Category.TOOLS));
         //weex
         if (DokitConstant.getKitItems(Category.WEEX) != null && !DokitConstant.getKitItems(Category.WEEX).isEmpty()) {
             kitLists.add(DokitConstant.getKitItems(Category.WEEX));

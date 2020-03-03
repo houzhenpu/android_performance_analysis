@@ -4,7 +4,6 @@ import android.app.Application;
 
 import com.performance.analysis.kit.IKit;
 import com.performance.analysis.constant.DokitConstant;
-import com.performance.analysis.kit.webdoor.WebDoorManager;
 
 import java.util.List;
 
@@ -33,11 +32,6 @@ public class DoraemonKit {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-
-    public static void setWebDoorCallback(WebDoorManager.WebDoorCallback callback) {
-        DoraemonKitReal.setWebDoorCallback(callback);
     }
 
 

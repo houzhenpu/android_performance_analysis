@@ -9,21 +9,16 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Process;
-import androidx.annotation.RequiresApi;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.view.Choreographer;
 
-import com.blankj.utilcode.util.ActivityUtils;
-import com.performance.analysis.kit.custom.UploadMonitorInfoBean;
-import com.performance.analysis.kit.custom.UploadMonitorItem;
-import com.performance.analysis.kit.network.NetworkManager;
+import androidx.annotation.RequiresApi;
+
 import com.performance.analysis.DoraemonKit;
-import com.performance.analysis.config.PerformanceSpInfoConfig;
+import com.performance.analysis.kit.network.NetworkManager;
 import com.performance.analysis.util.FileManager;
-import com.performance.analysis.util.JsonUtil;
 import com.performance.analysis.util.LogHelper;
-import com.performance.analysis.util.threadpool.ThreadPoolProxyFactory;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -32,7 +27,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.RandomAccessFile;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -71,7 +65,6 @@ public class PerformanceDataManager {
     private static final int MSG_MEMORY = 2;
     private static final int MSG_SAVE_LOCAL = 3;
     private static final int MSG_NET_FLOW = 4;
-    private UploadMonitorInfoBean mUploadMonitorBean;
     private boolean mUploading;
     private Handler mMainHandler = new Handler(Looper.getMainLooper());
     private FrameRateRunnable mRateRunnable = new FrameRateRunnable();
@@ -187,7 +180,6 @@ public class PerformanceDataManager {
                         mLastDownBytes = NetworkManager.get().getTotalResponseSize() - mDownBytes;
                         mHandler.sendEmptyMessageDelayed(MSG_NET_FLOW, NORMAL_FRAME_RATE * 1000);
                     } else if (msg.what == MSG_SAVE_LOCAL){
-                        saveToLocal();
                         mHandler.sendEmptyMessageDelayed(MSG_SAVE_LOCAL, NORMAL_FRAME_RATE * 1000);
                     }
                 }
@@ -224,41 +216,6 @@ public class PerformanceDataManager {
         mHandler.removeMessages(MSG_NET_FLOW);
     }
 
-    public void startUploadMonitorData() {
-        mUploading = true;
-        if (mUploadMonitorBean != null) {
-            mUploadMonitorBean = null;
-        }
-        if (PerformanceSpInfoConfig.isFPSOpen(mContext)) {
-            startMonitorFrameInfo();
-        }
-        if (PerformanceSpInfoConfig.isCPUOpen(mContext)) {
-            startMonitorCPUInfo();
-        }
-        if (PerformanceSpInfoConfig.isMemoryOpen(mContext)) {
-            startMonitorMemoryInfo();
-        }
-        if (PerformanceSpInfoConfig.isTrafficOpen(mContext)) {
-            NetworkManager.get().startMonitor();
-            startMonitorNetFlowInfo();
-        }
-        mHandler.sendEmptyMessageDelayed(MSG_SAVE_LOCAL, NORMAL_FRAME_RATE * 1000);
-    }
-
-    public void stopUploadMonitorData(){
-        mUploading = false;
-        mHandler.removeMessages(MSG_SAVE_LOCAL);
-        uploadDataToLocalFile();
-        stopMonitorFrameInfo();
-        stopMonitorCPUInfo();
-        stopMonitorMemoryInfo();
-        stopMonitorNetFlowInfo();
-        NetworkManager.get().stopMonitor();
-    }
-
-    public boolean isUploading(){
-        return mUploading;
-    }
 
     public void stopMonitorCPUInfo() {
         mHandler.removeMessages(MSG_CPU);
@@ -275,44 +232,6 @@ public class PerformanceDataManager {
         mHandler = null;
     }
 
-    private void saveToLocal() {
-        if (mUploadMonitorBean == null) {
-            mUploadMonitorBean = new UploadMonitorInfoBean();
-            mUploadMonitorBean.appName = mContext.getPackageName();
-            if(mUploadMonitorBean.performanceArray == null){
-                mUploadMonitorBean.performanceArray = new ArrayList<>();
-            }
-        }
-        NetworkManager networkManager = NetworkManager.get();
-        long upSize = networkManager.getTotalRequestSize();
-        long downSize = networkManager.getTotalResponseSize();
-
-        UploadMonitorItem info = new UploadMonitorItem();
-        info.cpu = mLastCpuRate;
-        info.fps = mLastFrameRate;
-        info.memory = mLastMemoryInfo;
-        info.upFlow = mLastUpBytes;
-        info.downFlow = mLastDownBytes;
-        mUpBytes = upSize;
-        mDownBytes = downSize;
-        info.timestamp = System.currentTimeMillis();
-
-        String pageName = "unkown";
-        if (ActivityUtils.getTopActivity() != null) {
-            pageName = ActivityUtils.getTopActivity().getLocalClassName();
-        }
-        info.page = pageName;
-        mUploadMonitorBean.performanceArray.add(info);
-    }
-
-    private void uploadDataToLocalFile() {
-        ThreadPoolProxyFactory.getThreadPoolProxy().execute(new Runnable() {
-            @Override
-            public void run() {
-                FileManager.writeTxtToFile(JsonUtil.jsonFromObject(mUploadMonitorBean), getFilePath(mContext), customFileName);
-            }
-        });
-    }
 
     public void startMonitorMemoryInfo() {
         if (mMaxMemory == 0) {

@@ -27,17 +27,10 @@ import com.performance.analysis.kit.IKit;
 import com.performance.analysis.kit.alignruler.AlignRulerKit;
 import com.performance.analysis.kit.blockmonitor.BlockMonitorKit;
 import com.performance.analysis.kit.colorpick.ColorPickerKit;
-import com.performance.analysis.kit.crash.CrashCaptureKit;
-import com.performance.analysis.kit.custom.CustomKit;
 import com.performance.analysis.kit.dataclean.DataCleanKit;
 import com.performance.analysis.kit.dbdebug.DbDebugFragment;
 import com.performance.analysis.kit.dbdebug.DbDebugKit;
-import com.performance.analysis.kit.fileexplorer.FileExplorerKit;
-import com.performance.analysis.kit.gpsmock.GpsMockKit;
-import com.performance.analysis.kit.gpsmock.GpsMockManager;
-import com.performance.analysis.kit.gpsmock.ServiceHookManager;
 import com.performance.analysis.kit.layoutborder.LayoutBorderKit;
-import com.performance.analysis.kit.logInfo.LogInfoKit;
 import com.performance.analysis.kit.mode.FloatModeKit;
 import com.performance.analysis.kit.network.NetworkKit;
 import com.performance.analysis.kit.parameter.cpu.CpuKit;
@@ -51,8 +44,6 @@ import com.performance.analysis.kit.uiperformance.UIPerformanceKit;
 import com.performance.analysis.kit.version.DokitVersionKit;
 import com.performance.analysis.kit.viewcheck.ViewCheckerKit;
 import com.performance.analysis.kit.weaknetwork.WeakNetworkKit;
-import com.performance.analysis.kit.webdoor.WebDoorKit;
-import com.performance.analysis.kit.webdoor.WebDoorManager;
 import com.performance.analysis.ui.UniversalActivity;
 import com.performance.analysis.ui.base.AbsDokitView;
 import com.performance.analysis.ui.base.DokitIntent;
@@ -172,8 +163,6 @@ class DoraemonKitReal {
 
         //解锁系统隐藏api限制权限以及hook Instrumentation
         HandlerHooker.doHook(app);
-        //hook WIFI GPS Telephony系统服务
-        ServiceHookManager.getInstance().install(app);
 
         //OkHttp 拦截器 注入
 //        OkHttpHook.installInterceptor();
@@ -317,13 +306,6 @@ class DoraemonKitReal {
         List<IKit> version = new ArrayList<>();
         //添加工具kit
         tool.add(new SysInfoKit());
-        tool.add(new FileExplorerKit());
-        if (GpsMockManager.getInstance().isMockEnable()) {
-            tool.add(new GpsMockKit());
-        }
-        tool.add(new WebDoorKit());
-        tool.add(new CrashCaptureKit());
-        tool.add(new LogInfoKit());
         tool.add(new DataCleanKit());
         if (IS_HOOK) {
             tool.add(new WeakNetworkKit());
@@ -353,8 +335,6 @@ class DoraemonKitReal {
 //        } catch (InstantiationException e) {
 //            e.printStackTrace();
 //        }
-
-        performance.add(new CustomKit());
 
         //添加视觉ui kit
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -429,11 +409,6 @@ class DoraemonKitReal {
         installLeakCanary(app);
         initAndroidUtil(app);
         registerNetworkStatusChangedListener();
-    }
-
-
-    static void setWebDoorCallback(WebDoorManager.WebDoorCallback callback) {
-        WebDoorManager.getInstance().setWebDoorCallback(callback);
     }
 
     /**
