@@ -88,6 +88,7 @@ public class TimeCounterDokitView extends AbsDokitView {
     public void showInfo(CounterInfo info) {
         tvTitle.setText(info.title);
         setTotalCost(info.totalCost);
+        System.out.println("TimeCounterDokitView Pause Cost   " + info.pauseCost);
 
         if (info.type == CounterInfo.TYPE_ACTIVITY) {
             tvPause.setVisibility(View.VISIBLE);
@@ -99,7 +100,6 @@ public class TimeCounterDokitView extends AbsDokitView {
             tvLaunch.setText("Launch Cost: " + info.launchCost + "ms");
             tvRender.setText("Render Cost: " + info.renderCost + "ms");
             tvOther.setText("Other Cost: " + info.otherCost + "ms");
-            System.out.println("Pause Cost:   "+ info.pauseCost);
         } else {
             tvPause.setVisibility(View.GONE);
             tvLaunch.setVisibility(View.GONE);

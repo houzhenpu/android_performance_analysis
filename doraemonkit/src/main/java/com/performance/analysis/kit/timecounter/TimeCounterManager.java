@@ -4,10 +4,10 @@ import android.app.Application;
 import android.os.Looper;
 
 import com.performance.analysis.kit.timecounter.bean.CounterInfo;
+import com.performance.analysis.kit.timecounter.counter.ActivityCounter;
 import com.performance.analysis.kit.timecounter.counter.AppCounter;
 import com.performance.analysis.ui.base.DokitIntent;
 import com.performance.analysis.ui.base.DokitViewManager;
-import com.performance.analysis.kit.timecounter.counter.ActivityCounter;
 
 import java.util.List;
 
@@ -99,5 +99,9 @@ public class TimeCounterManager {
 
     public CounterInfo getAppSetupInfo() {
         return mAppCounter.getAppSetupInfo();
+    }
+
+    public void setOnTimeCounterListener(OnTimeCounterListener onTimeCounterListener) {
+        mActivityCounter.setOnTimeCounterListener(onTimeCounterListener);
     }
 }

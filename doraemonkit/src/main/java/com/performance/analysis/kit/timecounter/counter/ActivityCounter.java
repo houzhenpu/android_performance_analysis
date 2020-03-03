@@ -3,6 +3,7 @@ package com.performance.analysis.kit.timecounter.counter;
 import android.app.Activity;
 
 import com.blankj.utilcode.util.ActivityUtils;
+import com.performance.analysis.kit.timecounter.OnTimeCounterListener;
 import com.performance.analysis.kit.timecounter.TimeCounterDokitView;
 import com.performance.analysis.kit.timecounter.bean.CounterInfo;
 import com.performance.analysis.ui.base.DokitViewManager;
@@ -31,6 +32,7 @@ public class ActivityCounter {
     private String mPreviousActivity;
     private String mCurrentActivity;
     private List<CounterInfo> mCounterInfos = new ArrayList<>();
+    private OnTimeCounterListener onTimeCounterListener;
 
     public void pause() {
         mStartTime = System.currentTimeMillis();
@@ -127,11 +129,18 @@ public class ActivityCounter {
         if (dokitView != null) {
             dokitView.showInfo(counterInfo);
         }
-
-
+        // TODO: 2020-03-03 检测结束 自定义事件
+        System.out.println("  CounterInfo  "+ counterInfo.toString());
+        if(onTimeCounterListener != null){
+            onTimeCounterListener.onTimeCounter(counterInfo.toString());
+        }
     }
 
     public List<CounterInfo> getHistory() {
         return mCounterInfos;
+    }
+
+    public void setOnTimeCounterListener(OnTimeCounterListener onTimeCounterListener){
+        this.onTimeCounterListener = onTimeCounterListener;
     }
 }

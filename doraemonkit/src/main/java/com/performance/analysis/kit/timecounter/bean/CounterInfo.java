@@ -1,5 +1,9 @@
 package com.performance.analysis.kit.timecounter.bean;
 
+import androidx.annotation.NonNull;
+
+import com.performance.analysis.util.JsonUtil;
+
 /**
  * @desc: 统计耗时的Bean
  */
@@ -20,4 +24,10 @@ public class CounterInfo {
     public long otherCost;
 
     public boolean show;
+
+    @NonNull
+    @Override
+    public String toString() {
+        return JsonUtil.jsonFromObject(this);
+    }
 }
