@@ -11,17 +11,12 @@ import com.performance.analysis.kit.alignruler.AlignRulerSettingFragment;
 import com.performance.analysis.kit.blockmonitor.BlockMonitorFragment;
 import com.performance.analysis.kit.colorpick.ColorPickerSettingFragment;
 import com.performance.analysis.kit.dataclean.DataCleanFragment;
-import com.performance.analysis.kit.dbdebug.DbDebugFragment;
 import com.performance.analysis.kit.methodtrace.MethodCostFragment;
-import com.performance.analysis.kit.network.ui.MockTemplatePreviewFragment;
-import com.performance.analysis.kit.network.ui.NetWorkMockFragment;
-import com.performance.analysis.kit.network.ui.NetWorkMonitorFragment;
 import com.performance.analysis.kit.parameter.cpu.CpuMainPageFragment;
 import com.performance.analysis.kit.parameter.frameInfo.FrameInfoFragment;
 import com.performance.analysis.kit.parameter.ram.RamMainPageFragment;
 import com.performance.analysis.kit.sysinfo.SysInfoFragment;
 import com.performance.analysis.kit.timecounter.TimeCounterFragment;
-import com.performance.analysis.kit.weaknetwork.WeakNetworkFragment;
 import com.performance.analysis.ui.base.BaseActivity;
 import com.performance.analysis.ui.base.BaseFragment;
 
@@ -53,10 +48,6 @@ public class UniversalActivity extends BaseActivity {
             case FragmentIndex.FRAGMENT_COLOR_PICKER_SETTING:
                 fragmentClass = ColorPickerSettingFragment.class;
                 break;
-            //远程数据库调试
-            case FragmentIndex.FRAGMENT_DB_DEBUG:
-                fragmentClass = DbDebugFragment.class;
-                break;
             //性能监控===帧率
             case FragmentIndex.FRAGMENT_FRAME_INFO:
                 fragmentClass = FrameInfoFragment.class;
@@ -67,16 +58,9 @@ public class UniversalActivity extends BaseActivity {
             case FragmentIndex.FRAGMENT_DATA_CLEAN:
                 fragmentClass = DataCleanFragment.class;
                 break;
-            case FragmentIndex.FRAGMENT_WEAK_NETWORK:
-                fragmentClass = WeakNetworkFragment.class;
-                break;
             //性能监控===卡顿检测
             case FragmentIndex.FRAGMENT_BLOCK_MONITOR:
                 fragmentClass = BlockMonitorFragment.class;
-                break;
-            //性能监控===流量监控
-            case FragmentIndex.FRAGMENT_NETWORK_MONITOR:
-                fragmentClass = NetWorkMonitorFragment.class;
                 break;
             //性能监控===CPU
             case FragmentIndex.FRAGMENT_CPU:
@@ -97,16 +81,9 @@ public class UniversalActivity extends BaseActivity {
             case FragmentIndex.FRAGMENT_METHOD_COST:
                 fragmentClass = MethodCostFragment.class;
                 break;
-            //性能监控===数据mock
-            case FragmentIndex.FRAGMENT_NETWORK_MOCK:
-                fragmentClass = NetWorkMockFragment.class;
-                break;
 //            case FragmentIndex.FRAGMENT_TOP_ACTIVITY:
 //                fragmentClass = TopActivityFragment.class;
 //                break;
-            case FragmentIndex.FRAGMENT_MOCK_TEMPLATE_PREVIEW:
-                fragmentClass = MockTemplatePreviewFragment.class;
-                break;
             default:
                 break;
         }

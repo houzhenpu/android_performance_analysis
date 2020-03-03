@@ -1,14 +1,11 @@
 package com.performance.analysis.ui.base;
 
 import android.app.Activity;
-import androidx.room.Room;
 import android.content.Context;
 import android.graphics.Point;
 import android.view.WindowManager;
 
 import com.performance.analysis.constant.DokitConstant;
-import com.performance.analysis.kit.network.room_db.DokitDatabase;
-import com.performance.analysis.kit.network.room_db.DokitDbManager;
 import com.performance.analysis.ui.main.ToolPanelDokitView;
 import com.performance.analysis.util.LogHelper;
 
@@ -32,10 +29,6 @@ public class DokitViewManager implements DokitViewManagerInterface {
 
     private DokitViewManagerInterface mDokitViewManager;
     private Context mContext;
-    /**
-     * 数据库操作类
-     */
-    private DokitDatabase mDB;
 
     /**
      * 静态内部类单例
@@ -58,24 +51,7 @@ public class DokitViewManager implements DokitViewManagerInterface {
         }
         mDokitViewPos = new HashMap<>();
         mLastDokitViewPosInfoMaps = new HashMap<>();
-        mDB = Room.databaseBuilder(context,
-                DokitDatabase.class,
-                "dokit-database")
-                //下面注释表示允许主线程进行数据库操作，但是不推荐这样做。
-                //他可能造成主线程lock以及anr
-                //所以我们的操作都是在新线程完成的
-                .allowMainThreadQueries()
-                .build();
-        //获取所有的intercept apis
-        DokitDbManager.getInstance().getAllInterceptApis();
 
-        //获取所有的template apis
-        DokitDbManager.getInstance().getAllTemplateApis();
-
-    }
-
-    public DokitDatabase getDb() {
-        return mDB;
     }
 
     /**

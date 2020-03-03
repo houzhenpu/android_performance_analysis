@@ -55,17 +55,7 @@ dependencies {
         exclude group: 'com.google.guava', module: 'listenablefuture'
     }
     implementation rootProject.ext.dependencies["utilcode"]
-    //远程调试db
-    implementation rootProject.ext.dependencies["debug-db"]
-    implementation rootProject.ext.dependencies["debug-db-encrypt"]
-    //rv
-    implementation rootProject.ext.dependencies["brvah"]
-    implementation rootProject.ext.dependencies["easy_refresh_layout"]
-    //implementation rootProject.ext.dependencies["okgo"]
-    implementation rootProject.ext.dependencies["okhttp"]
-    //implementation rootProject.ext.dependencies["okio"]
-    implementation rootProject.ext.dependencies["room_runtime"]
-    annotationProcessor rootProject.ext.dependencies["room_compile"]
+
 
 
 }

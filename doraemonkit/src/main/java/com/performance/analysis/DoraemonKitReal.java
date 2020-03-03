@@ -11,13 +11,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
-import com.amitshekhar.DebugDB;
-import com.amitshekhar.debug.encrypt.sqlite.DebugDBEncryptFactory;
-import com.amitshekhar.debug.sqlite.DebugDBFactory;
 import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.LogUtils;
-import com.blankj.utilcode.util.NetworkUtils;
-import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
 import com.didichuxing.doraemonkit.R;
 import com.performance.analysis.constant.DokitConstant;
@@ -28,11 +23,8 @@ import com.performance.analysis.kit.alignruler.AlignRulerKit;
 import com.performance.analysis.kit.blockmonitor.BlockMonitorKit;
 import com.performance.analysis.kit.colorpick.ColorPickerKit;
 import com.performance.analysis.kit.dataclean.DataCleanKit;
-import com.performance.analysis.kit.dbdebug.DbDebugFragment;
-import com.performance.analysis.kit.dbdebug.DbDebugKit;
 import com.performance.analysis.kit.layoutborder.LayoutBorderKit;
 import com.performance.analysis.kit.mode.FloatModeKit;
-import com.performance.analysis.kit.network.NetworkKit;
 import com.performance.analysis.kit.parameter.cpu.CpuKit;
 import com.performance.analysis.kit.parameter.frameInfo.FrameInfoKit;
 import com.performance.analysis.kit.parameter.ram.RamKit;
@@ -43,22 +35,18 @@ import com.performance.analysis.kit.timecounter.instrumentation.HandlerHooker;
 import com.performance.analysis.kit.uiperformance.UIPerformanceKit;
 import com.performance.analysis.kit.version.DokitVersionKit;
 import com.performance.analysis.kit.viewcheck.ViewCheckerKit;
-import com.performance.analysis.kit.weaknetwork.WeakNetworkKit;
 import com.performance.analysis.ui.UniversalActivity;
 import com.performance.analysis.ui.base.AbsDokitView;
 import com.performance.analysis.ui.base.DokitIntent;
 import com.performance.analysis.ui.base.DokitViewManager;
 import com.performance.analysis.ui.main.FloatIconDokitView;
 import com.performance.analysis.ui.main.ToolPanelDokitView;
-import com.performance.analysis.util.DoraemonStatisticsUtil;
 import com.performance.analysis.util.LifecycleListenerUtil;
 import com.performance.analysis.util.LogHelper;
 import com.performance.analysis.util.PermissionUtil;
 import com.performance.analysis.util.SharedPrefsUtil;
 import com.performance.analysis.util.UIUtils;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -80,7 +68,6 @@ class DoraemonKitReal {
      */
     private static boolean sEnableUpload = true;
     private static Application APPLICATION;
-    private static DbDebugFragment mDbDebugFragment;
 
     /**
      * 用来判断是否接入了dokit插件 如果安装了插件会动态修改这个值为true
@@ -94,9 +81,6 @@ class DoraemonKitReal {
         public void onFragmentAttached(FragmentManager fm, Fragment fragment, Context context) {
             super.onFragmentAttached(fm, fragment, context);
             LogHelper.d(TAG, "onFragmentAttached: " + fragment);
-            if (fragment instanceof DbDebugFragment) {
-                mDbDebugFragment = (DbDebugFragment) fragment;
-            }
             for (LifecycleListenerUtil.LifecycleListener listener : LifecycleListenerUtil.LIFECYCLE_LISTENERS) {
                 listener.onFragmentAttached(fragment);
             }
@@ -106,9 +90,6 @@ class DoraemonKitReal {
         public void onFragmentDetached(FragmentManager fm, Fragment fragment) {
             super.onFragmentDetached(fm, fragment);
             LogHelper.d(TAG, "onFragmentDetached: " + fragment);
-            if (fragment instanceof DbDebugFragment) {
-                mDbDebugFragment = null;
-            }
             for (LifecycleListenerUtil.LifecycleListener listener : LifecycleListenerUtil.LIFECYCLE_LISTENERS) {
                 listener.onFragmentDetached(fragment);
             }
@@ -164,8 +145,6 @@ class DoraemonKitReal {
         //解锁系统隐藏api限制权限以及hook Instrumentation
         HandlerHooker.doHook(app);
 
-        //OkHttp 拦截器 注入
-//        OkHttpHook.installInterceptor();
         LogHelper.i(TAG, "IS_HOOK====>" + IS_HOOK);
         //注册全局的activity生命周期回调
         app.registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
@@ -280,11 +259,6 @@ class DoraemonKitReal {
         });
         DokitConstant.KIT_MAPS.clear();
 
-        //两个条件只要满足一个就可以
-        if (IS_HOOK) {
-
-        }
-
         //业务专区
         List<IKit> biz = new ArrayList<>();
         //weex专区
@@ -307,34 +281,15 @@ class DoraemonKitReal {
         //添加工具kit
         tool.add(new SysInfoKit());
         tool.add(new DataCleanKit());
-        if (IS_HOOK) {
-            tool.add(new WeakNetworkKit());
-        }
-        tool.add(new DbDebugKit());
 
         //添加性能监控kit
         performance.add(new FrameInfoKit());
         performance.add(new CpuKit());
         performance.add(new RamKit());
-        if (IS_HOOK) {
-            performance.add(new NetworkKit());
-        }
         performance.add(new BlockMonitorKit());
         performance.add(new TimeCounterKit());
         //performance.add(new MethodCostKit());
         performance.add(new UIPerformanceKit());
-
-//        try {
-//            //动态添加leakcanary
-//            IKit leakCanaryKit = (IKit) Class.forName("com.didichuxing.doraemonkit.kit.leakcanary.LeakCanaryKit").newInstance();
-//            performance.add(leakCanaryKit);
-//        } catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IllegalAccessException e) {
-//            e.printStackTrace();
-//        } catch (InstantiationException e) {
-//            e.printStackTrace();
-//        }
 
         //添加视觉ui kit
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -344,10 +299,6 @@ class DoraemonKitReal {
         ui.add(new AlignRulerKit());
         ui.add(new ViewCheckerKit());
         ui.add(new LayoutBorderKit());
-        if (IS_HOOK) {
-            //新增数据mock工具 由于Dokit管理平台还没完善 所以暂时关闭入口
-            //platform.add(new MockKit());
-        }
 
         //增加浮标模式
         floatMode.add(new FloatModeKit());
@@ -374,24 +325,6 @@ class DoraemonKitReal {
         }
         //注入到sKitMap中
         DokitConstant.KIT_MAPS.put(Category.BIZ, biz);
-        //动态添加weex专区
-        try {
-            IKit weexLogKit = (IKit) Class.forName("com.didichuxing.doraemonkit.weex.log.WeexLogKit").newInstance();
-            weex.add(weexLogKit);
-            IKit storageKit = (IKit) Class.forName("com.didichuxing.doraemonkit.weex.storage.StorageKit").newInstance();
-            weex.add(storageKit);
-            IKit weexInfoKit = (IKit) Class.forName("com.didichuxing.doraemonkit.weex.info.WeexInfoKit").newInstance();
-            weex.add(weexInfoKit);
-            IKit devToolKit = (IKit) Class.forName("com.didichuxing.doraemonkit.weex.devtool.DevToolKit").newInstance();
-            weex.add(devToolKit);
-            DokitConstant.KIT_MAPS.put(Category.WEEX, weex);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        }
 
         DokitConstant.KIT_MAPS.put(Category.PERFORMANCE, performance);
         DokitConstant.KIT_MAPS.put(Category.PLATFORM, platform);
@@ -402,74 +335,7 @@ class DoraemonKitReal {
         DokitConstant.KIT_MAPS.put(Category.VERSION, version);
         //初始化悬浮窗管理类
         DokitViewManager.getInstance().init(app);
-        //上传app基本信息便于统计
-        if (sEnableUpload) {
-            DoraemonStatisticsUtil.uploadUserInfo(app);
-        }
-        installLeakCanary(app);
         initAndroidUtil(app);
-        registerNetworkStatusChangedListener();
-    }
-
-    /**
-     * 注册全局的网络状态监听
-     */
-    private static void registerNetworkStatusChangedListener() {
-        NetworkUtils.registerNetworkStatusChangedListener(new NetworkUtils.OnNetworkStatusChangedListener() {
-            @Override
-            public void onDisconnected() {
-                ToastUtils.showShort("当前网络已断开");
-                try {
-                    DebugDB.shutDown();
-                    if (mDbDebugFragment != null) {
-                        mDbDebugFragment.networkChanged(NetworkUtils.NetworkType.NETWORK_NO);
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-
-            @Override
-            public void onConnected(NetworkUtils.NetworkType networkType) {
-                //重启DebugDB
-                ToastUtils.showShort("当前网络类型:" + networkType.name());
-                try {
-                    DebugDB.shutDown();
-                    DebugDB.initialize(APPLICATION, new DebugDBFactory());
-                    DebugDB.initialize(APPLICATION, new DebugDBEncryptFactory());
-                    if (mDbDebugFragment != null) {
-                        mDbDebugFragment.networkChanged(networkType);
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-            }
-        });
-    }
-
-    /**
-     * 安装leackCanary
-     *
-     * @param app
-     */
-    private static void installLeakCanary(Application app) {
-        //反射调用
-        try {
-            Class leakCanaryManager = Class.forName("com.didichuxing.doraemonkit.LeakCanaryManager");
-            Method install = leakCanaryManager.getMethod("install", Application.class);
-            //调用静态的install方法
-            install.invoke(null, app);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        }
-
     }
 
     private static void initAndroidUtil(Application app) {

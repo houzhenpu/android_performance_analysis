@@ -1,14 +1,12 @@
 package com.performance.analysis.reflection;
 
 import android.content.Context;
-import android.util.Log;
 
 import java.lang.reflect.Method;
 
 import static android.os.Build.VERSION.SDK_INT;
 
 /**
- * @author weishu
  * @date 2018/6/7.
  * https://github.com/tiann/FreeReflection
  */

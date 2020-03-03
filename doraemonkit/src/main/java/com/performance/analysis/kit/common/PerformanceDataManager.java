@@ -16,7 +16,6 @@ import android.view.Choreographer;
 import androidx.annotation.RequiresApi;
 
 import com.performance.analysis.DoraemonKit;
-import com.performance.analysis.kit.network.NetworkManager;
 import com.performance.analysis.util.FileManager;
 import com.performance.analysis.util.LogHelper;
 
@@ -176,8 +175,6 @@ public class PerformanceDataManager {
                         executeMemoryData();
                         mHandler.sendEmptyMessageDelayed(MSG_MEMORY, NORMAL_FRAME_RATE * 1000);
                     } else if (msg.what == MSG_NET_FLOW){
-                        mLastUpBytes = NetworkManager.get().getTotalRequestSize() - mUpBytes;
-                        mLastDownBytes = NetworkManager.get().getTotalResponseSize() - mDownBytes;
                         mHandler.sendEmptyMessageDelayed(MSG_NET_FLOW, NORMAL_FRAME_RATE * 1000);
                     } else if (msg.what == MSG_SAVE_LOCAL){
                         mHandler.sendEmptyMessageDelayed(MSG_SAVE_LOCAL, NORMAL_FRAME_RATE * 1000);

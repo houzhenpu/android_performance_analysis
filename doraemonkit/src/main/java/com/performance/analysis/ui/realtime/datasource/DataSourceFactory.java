@@ -11,8 +11,6 @@ public class DataSourceFactory {
 
     public static IDataSource createDataSource(int type) {
         switch (type) {
-            case TYPE_NETWORK:
-                return new NetworkDataSource();
             case TYPE_CPU:
                 return new CpuDataSource();
             case TYPE_RAM:
