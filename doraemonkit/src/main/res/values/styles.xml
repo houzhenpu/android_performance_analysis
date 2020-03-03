@@ -83,10 +83,6 @@
         <item name="android:textColor">@color/dk_color_151515</item>
     </style>
 
-    <style name="DK.TextSmall.Darker" parent="DK.TextSmall">
-        <item name="android:textColor">@color/dk_color_333333</item>
-    </style>
-
     <style name="DK.TextBig.Dark" parent="DK.TextBig">
         <item name="android:textColor">@color/dk_color_151515</item>
     </style>
@@ -117,59 +113,6 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:button">@null</item>
         <item name="android:background">@drawable/dk_switch_background</item>
-    </style>
-
-    <style name="DK.RadioButton">
-        <item name="android:gravity">center</item>
-        <item name="android:textSize">@dimen/dk_font_size_14</item>
-        <item name="android:textColor">@color/dk_radio_button_text_color</item>
-        <item name="android:layout_height">34dp</item>
-        <item name="android:layout_width">70dp</item>
-        <item name="android:button">@null</item>
-        <item name="android:background">@drawable/dk_radio_button_background</item>
-    </style>
-
-    <style name="DK.RadioButton.Left">
-        <item name="android:gravity">center</item>
-        <item name="android:textSize">@dimen/dk_font_size_14</item>
-        <item name="android:textColor">@color/dk_radio_button_text_color</item>
-        <item name="android:layout_height">34dp</item>
-        <item name="android:layout_width">70dp</item>
-        <item name="android:button">@null</item>
-        <item name="android:background">@drawable/dk_radio_button_background_left</item>
-    </style>
-
-    <style name="DK.RadioButton.Right">
-        <item name="android:gravity">center</item>
-        <item name="android:textSize">@dimen/dk_font_size_14</item>
-        <item name="android:textColor">@color/dk_radio_button_text_color</item>
-        <item name="android:layout_height">34dp</item>
-        <item name="android:layout_width">70dp</item>
-        <item name="android:button">@null</item>
-        <item name="android:background">@drawable/dk_radio_button_background_right</item>
-    </style>
-
-    <style name="DK.Input">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">36dp</item>
-        <item name="android:gravity">center_vertical|left</item>
-        <item name="android:textColor">@color/dk_color_333333</item>
-        <item name="android:textColorHint">@color/dk_color_CCCCCC</item>
-        <item name="android:textSize">@dimen/dk_font_size_16</item>
-        <item name="android:background">@null</item>
-        <item name="android:textCursorDrawable">@drawable/dk_input_cursor</item>
-    </style>
-
-    <style name="DK.ConfirmButton">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">50dp</item>
-        <item name="android:textSize">@dimen/dk_font_size_16</item>
-        <item name="android:gravity">center</item>
-    </style>
-
-    <style name="DK.ConfirmButton.Positive" parent="DK.ConfirmButton">
-        <item name="android:background">@drawable/dk_confirm_button_background</item>
-        <item name="android:textColor">@color/dk_confirm_button_text_color</item>
     </style>
 
     <style name="DK.CommonItem">
