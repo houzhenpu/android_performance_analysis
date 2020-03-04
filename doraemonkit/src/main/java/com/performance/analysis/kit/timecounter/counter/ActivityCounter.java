@@ -7,6 +7,8 @@ import com.performance.analysis.kit.timecounter.OnTimeCounterListener;
 import com.performance.analysis.kit.timecounter.TimeCounterDokitView;
 import com.performance.analysis.kit.timecounter.bean.CounterInfo;
 import com.performance.analysis.ui.base.DokitViewManager;
+import com.performance.analysis.upload.UploadInfo;
+import com.performance.analysis.upload.UploadManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -129,8 +131,10 @@ public class ActivityCounter {
         if (dokitView != null) {
             dokitView.showInfo(counterInfo);
         }
-        if(onTimeCounterListener != null){
-            onTimeCounterListener.onTimeCounter(counterInfo.toString());
+        if (onTimeCounterListener != null) {
+            UploadInfo uploadInfo = UploadManager.getUploadManager().getUploadInfo();
+            uploadInfo.setCounterInfo(counterInfo);
+            onTimeCounterListener.onTimeCounter(uploadInfo.toString());
         }
     }
 
@@ -138,7 +142,7 @@ public class ActivityCounter {
         return mCounterInfos;
     }
 
-    public void setOnTimeCounterListener(OnTimeCounterListener onTimeCounterListener){
+    public void setOnTimeCounterListener(OnTimeCounterListener onTimeCounterListener) {
         this.onTimeCounterListener = onTimeCounterListener;
     }
 }

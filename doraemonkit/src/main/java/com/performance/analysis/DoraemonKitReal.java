@@ -7,10 +7,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-
 import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.Utils;
@@ -50,6 +46,10 @@ import com.performance.analysis.util.UIUtils;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
 /**
  * DoraemonKit 真正执行的类  不建议外部app调用
@@ -457,7 +457,7 @@ class DoraemonKitReal {
     }
 
     /**
-     * 禁用app信息上传开关，该上传信息只为做DoKit接入量的统计，如果用户需要保护app隐私，可调用该方法进行禁用
+     * 禁用app信息上传开关，该上传信息只为做DoKit接入量的统计
      */
     static void disableUpload() {
         sEnableUpload = false;
