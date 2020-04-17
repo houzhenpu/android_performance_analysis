@@ -1,20 +1,21 @@
 package com.performance.analysis.ui.main;
 
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 
 import com.didichuxing.doraemonkit.R;
-import com.performance.analysis.ui.base.DokitViewManager;
 import com.performance.analysis.config.FloatIconConfig;
 import com.performance.analysis.ui.base.AbsDokitView;
 import com.performance.analysis.ui.base.DokitIntent;
 import com.performance.analysis.ui.base.DokitViewLayoutParams;
+import com.performance.analysis.ui.base.DokitViewManager;
 
 /**
  * 悬浮按钮
- *     on 2019/09/26.
+ * on 2019/09/26.
  */
 
 public class FloatIconDokitView extends AbsDokitView {
@@ -44,7 +45,18 @@ public class FloatIconDokitView extends AbsDokitView {
 
     @Override
     public View onCreateView(Context context, FrameLayout view) {
-        return LayoutInflater.from(context).inflate(R.layout.dk_float_launch_icon, view, false);
+        View floatIcon = LayoutInflater.from(context).inflate(R.layout.dk_float_launch_icon, view, false);
+        floatIcon.setVisibility(isApkInDebug(context) ? View.VISIBLE : View.GONE);
+        return floatIcon;
+    }
+
+    public static boolean isApkInDebug(Context context) {
+        try {
+            ApplicationInfo info = context.getApplicationInfo();
+            return (info.flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
 
